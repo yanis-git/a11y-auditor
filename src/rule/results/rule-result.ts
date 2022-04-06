@@ -1,4 +1,5 @@
-export type RuleStatus = 'success' | 'warning' | 'error';
+import {RuleStatus} from './constant';
+
 
 export class RuleResult {
     constructor(
@@ -14,10 +15,10 @@ export class RuleResult {
     }
 
     static createSuccessRecommandation(name: string, description: string): RuleResult {
-        return RuleResult.createRecommandation(name, description, [], [], 'success');
+        return RuleResult.createRecommandation(name, description, [], [], RuleStatus.SUCCESS);
     }
 
     static createErrorRecommandation(name: string, description: string, hints: string[] = [], links: string[] = []): RuleResult {
-        return RuleResult.createRecommandation(name, description, hints, links, 'error');
+        return RuleResult.createRecommandation(name, description, hints, links, RuleStatus.ERROR);
     }
 }

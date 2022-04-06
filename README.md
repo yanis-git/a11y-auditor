@@ -31,6 +31,7 @@ node dist/index.js --url=http://\[::\]:8000/dummy/
 - [x] Create setup
 - [x] Create Folder structure
 - [x] Create convenient way to provide url to analyse.
+- [x] Add Identifier per criteria to have a better tracking over the time.
 - [ ] Create Documentation folders to details rules. 
 - [ ] Create a Functional testing setup.
 - [ ] Add github Action to run automatic testing suite.
