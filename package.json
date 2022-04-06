@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Chromeless bot to check accessibility criteria",
   "scripts": {
-    "lint": "tslint -c tslint.json 'src/**/*.ts",
+    "lint": "tslint -c tslint.json 'src/**/*.ts'",
     "build": "tsc",
     "watch": "tsc --watch",
     "serve": "python3 -m http.server --directory tests",

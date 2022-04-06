@@ -1,6 +1,5 @@
 import {RuleStatus} from './constant';
 
-
 export class RuleResult {
     constructor(
         private name: string,

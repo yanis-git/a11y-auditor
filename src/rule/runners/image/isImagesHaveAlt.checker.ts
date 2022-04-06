@@ -9,13 +9,13 @@ const hints = [
 ];
 
 export async function isImagesHaveAltChecker(page: Page): Promise<RuleResult> {
-    /** parsing section **/
+    // parsing section
     const results = await page.evaluate(() => {
         const images = document.querySelectorAll<HTMLImageElement>('img:not([alt])');
         return Array.from(images).map((image: HTMLImageElement) => image.getAttribute('src') ?? 'not-found');
     });
 
-    /** decision section **/
+    // decision section
     if (results.length === 0) {
         return RuleResult.createSuccessRecommandation(ruleName, ruleDescription);
     } else {
