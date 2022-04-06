@@ -1,3 +1,4 @@
+name: Automatic Testing Flow
 on:
   push:
     branches: [main]
