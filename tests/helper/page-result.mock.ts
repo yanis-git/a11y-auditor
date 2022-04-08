@@ -7,7 +7,6 @@ import path from 'path';
 export async function getPageWithContent(contentPath: string): Promise<Page> {
     const file = path.resolve(__dirname, '../../', contentPath);
 
-    console.log(file);
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
 
