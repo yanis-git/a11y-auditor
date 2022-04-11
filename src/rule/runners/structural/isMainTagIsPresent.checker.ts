@@ -1,7 +1,7 @@
 import {Page} from 'puppeteer';
 import {RuleResult} from '../../results/rule-result';
 
-const ruleName = 'Is main content tag is present ?';
+const ruleName = 'Is main tag is present ?';
 const ruleDescription = 'Main tag is required, it is landmark of the page and should be used once per page';
 const sources = [
     "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/main_role"
