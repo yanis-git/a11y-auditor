@@ -1,5 +1,4 @@
-// @ts-ignore
-import puppeteer, {Page, Request} from 'puppeteer';
+import {Page} from 'puppeteer';
 import {getPageWithContent} from '../../helper/page-result.mock';
 import {isImagesHaveAltChecker} from '../../../src/rule/runners/image/isImagesHaveAlt.checker';
 import {RuleResult} from '../../../src/rule/results/rule-result';

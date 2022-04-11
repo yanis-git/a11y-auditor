@@ -9,7 +9,6 @@ export async function getPageWithContent(contentPath: string): Promise<Page> {
 
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
-
     await page.setRequestInterception(true);
     page.on('request', (request: Request) => {
         request.respond({
