@@ -1,7 +1,7 @@
 import {Page} from 'puppeteer';
 import {getPageWithContent} from '../../helper/page-result.mock';
-import {RuleResult} from '../../../src/rule/results/rule-result';
-import {isNavIsPresent} from '../../../src/rule/runners/structural/isNavIsPresent.checker';
+import {RuleResult} from '../../../src/auditor/rule/results/rule-result';
+import {isNavIsPresent} from '../../../src/auditor/rule/runners/structural/isNavIsPresent.checker';
 
 describe('Navigation Landmark', function () {
     it.each`

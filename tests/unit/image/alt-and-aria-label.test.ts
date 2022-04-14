@@ -1,8 +1,8 @@
 // @ts-ignore
 import {Page, Request} from 'puppeteer';
 import {getPageWithContent} from '../../helper/page-result.mock';
-import {RuleResult} from '../../../src/rule/results/rule-result';
-import {isAltNotOverridden} from '../../../src/rule/runners/image/isAltIsNotOverided.checker';
+import {RuleResult} from '../../../src/auditor/rule/results/rule-result';
+import {isAltNotOverridden} from '../../../src/auditor/rule/runners/image/isAltIsNotOverided.checker';
 
 describe('Image alt and aria label', () => {
     it('is should return error when image have alt and aria-label', () => {

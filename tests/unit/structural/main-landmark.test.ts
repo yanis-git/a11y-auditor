@@ -1,7 +1,7 @@
 import {Page} from 'puppeteer';
 import {getPageWithContent} from '../../helper/page-result.mock';
-import {RuleResult} from '../../../src/rule/results/rule-result';
-import {isMainTagIsPresent} from '../../../src/rule/runners/structural/isMainTagIsPresent.checker';
+import {RuleResult} from '../../../src/auditor/rule/results/rule-result';
+import {isMainTagIsPresent} from '../../../src/auditor/rule/runners/structural/isMainTagIsPresent.checker';
 
 describe('Main Landmark', function () {
     it.each`

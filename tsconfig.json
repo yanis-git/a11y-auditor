@@ -1,9 +1,9 @@
 {
   "compilerOptions": {
-    "target": "es2016",
+    "target": "es2017",
     "lib": ["dom", "ES2020"],
     "module": "commonjs",
-    "outDir": "dist",
+    "outDir": "dist/browser",
     "removeComments": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
@@ -11,6 +11,6 @@
     "skipLibCheck": true
   },
   "include": [
-    "src/**/*"
+    "src/auditor/**/*"
   ]
 }
