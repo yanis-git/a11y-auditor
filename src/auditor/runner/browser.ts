@@ -5,7 +5,7 @@ export class Browser {
     private browser!: PuppeteerBrowser;
     private page!: Page;
     private isDebug: boolean;
-    constructor(isDebug: boolean = false) {
+    constructor(isDebug: boolean, private browserDir: string) {
         this.isDebug = isDebug;
     }
 
@@ -13,12 +13,9 @@ export class Browser {
         if (!this.isBootstrapped()) {
             await this.bootstrapBrowser();
         }
-
-        // await this.page.setDefaultNavigationTimeout(0);
         await this.page.goto(url);
-
+        await this.page.addScriptTag({ path: this.getBrowserScript() });
         return this.page;
-        // await this.page.waitForNavigation({ waitUntil: 'networkidle0' });
     }
 
     private async bootstrapBrowser() {
@@ -36,5 +33,9 @@ export class Browser {
     }
     private isBootstrapped(): boolean {
         return this.page !== undefined;
+    }
+
+    private getBrowserScript() {
+        return require.resolve(this.browserDir + '/index.js');
     }
 }

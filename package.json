@@ -8,8 +8,8 @@
     "watch:browser": "webpack --config bundler/webpack.config.js --watch",
     "build:auditor": "tsc --project tsconfig.json",
     "watch:auditor": "tsc --watch --project tsconfig.json",
-    "serve": "python3 -m http.server --directory tests",
-    "start": "node dist//index.js",
+    "serve": "python3 -m http.server --directory tests/data",
+    "start": "node dist/auditor/index.js",
     "test": "jest --runInBand --detectOpenHandles --forceExit"
   },
   "repository": {
