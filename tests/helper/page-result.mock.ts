@@ -1,7 +1,7 @@
 // @ts-ignore
 import puppeteer, {Page, Request} from 'puppeteer';
 import * as fs from 'fs';
-import path from 'path';
+import * as path from 'path';
 
 
 export async function getPageWithContent(contentPath: string): Promise<Page> {
@@ -20,6 +20,7 @@ export async function getPageWithContent(contentPath: string): Promise<Page> {
     });
 
     await page.goto('http://localhost');
+    await page.addScriptTag({path: path.resolve(__dirname, '../../', 'dist/browser/index.js')});
 
     return page;
 }
