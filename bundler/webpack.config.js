@@ -3,6 +3,10 @@ module.exports = {
   mode: "production",
   entry: './src/browser/index.ts',
   output: {
+    library: {
+      name: 'a11yAuditor',
+      type: "window"
+    },
     path: path.resolve(__dirname, '../dist/browser'),
     filename: 'index.js'
   },
