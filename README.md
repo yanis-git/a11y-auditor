@@ -11,19 +11,19 @@ Based on set of rules available on `src/rule/runners`.
 git clone https://github.com/yanis-git/a11y-auditor 
 cd a11y-auditor
 npm install
-npm run build 
+npm run build
 ```
 
 **How to use ?**
 ```
-node dist/index.js --url=http://localhost:3000
+node dist/auditor/index.js --url=http://localhost:3000
 ```
 
 **How to quickly test ?**
 ```
 # it start a python server to mount tests folder.
 npm run serve
-node dist/index.js --url=http://\[::\]:8000/dummy/   
+node dist/auditor/index.js --url=http://\[::\]:8000/data/structural/main/test-main-tag-is-present.html
 ```
 
 **Pending todo list:** 
@@ -34,6 +34,8 @@ node dist/index.js --url=http://\[::\]:8000/dummy/
 - [x] Add Identifier per criteria to have a better tracking over the time.
 - [x] Create a Functional testing setup.
 - [x] Add github Action to run automatic testing suite.
+- [x] Create Helper Browser method.
+- [ ] Fix issue with typescript `type.d.ts` loading from browser compilation.
 - [ ] Create Documentation folders to details rules.
 - [ ] Includes a way to provide a list of rules to run. 
 - [ ] Create a way to provide a list of rules to ignore. 
