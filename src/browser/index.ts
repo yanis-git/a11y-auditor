@@ -1,8 +1,8 @@
-import {isScreenReaderVisible} from './helper/visibility/isVisible';
+import {isVisibleForScreenReader} from './helper/visibility/isVisible';
 import {checkAttribute, checkCssProperty, hasHiddenParent} from './utils/checkAttribute';
 
 export const helper = {
-    isScreenReaderVisible,
+    isVisibleForScreenReader,
     checkCssProperty,
     checkAttribute,
     hasHiddenParent

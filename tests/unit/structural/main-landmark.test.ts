@@ -13,8 +13,8 @@ describe('Main Landmark', function () {
         return (async () => {
             const page: Page = await getPageWithContent(state.template);
             const result: RuleResult = await isMainTagIsPresent(page);
-            expect(result.isSuccess()).toBe(true);
             expect(result.getHints()).toEqual([]);
+            expect(result.isSuccess()).toBe(true);
         })();
     });
 
@@ -22,8 +22,8 @@ describe('Main Landmark', function () {
         return (async () => {
             const page: Page = await getPageWithContent('tests/data/structural/main/test-main-role-is-not-present.html');
             const result: RuleResult = await isMainTagIsPresent(page);
-            expect(result.isError()).toBe(true);
             expect(result.getHints()).toEqual(['Main landmark is missing']);
+            expect(result.isError()).toBe(true);
         })();
     });
 
@@ -32,8 +32,8 @@ describe('Main Landmark', function () {
         return (async () => {
             const page: Page = await getPageWithContent('tests/data/structural/main/test-main-role-is-duplicated.html');
             const result: RuleResult = await isMainTagIsPresent(page);
-            expect(result.isError()).toBe(true);
             expect(result.getHints()).toEqual(['Main landmark is present more than once. Use hidden attributes or remove tags']);
+            expect(result.isError()).toBe(true);
         })();
     });
 });

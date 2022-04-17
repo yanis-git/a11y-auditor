@@ -7,6 +7,7 @@ const sources = [
     "https://fae.disability.illinois.edu/rulesets/IMAGE_1/#:~:text=The%20alt%20attribute%20is%20the,with%20role%3D%22img%22%20."
 ];
 
+declare var a11yAuditor: any;
 export async function isAltNotOverridden(page: Page): Promise<RuleResult> {
     // parsing section
     const results = await page.evaluate(() => {

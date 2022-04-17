@@ -7,12 +7,13 @@ const sources = [
     "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/main_role"
 ];
 
+declare var a11yAuditor: any;
 export async function isMainTagIsPresent(page: Page): Promise<RuleResult> {
     // parsing section
     const results = await page.evaluate(() => {
         return Array
             .from(document.querySelectorAll<HTMLElement>('main, [role=main]'))
-            .filter(el => !el.hasAttribute('hidden') && !el.hasAttribute('aria-hidden'))
+            .filter(el => a11yAuditor.helper.isVisibleForScreenReader(el))
         ;
     });
 

@@ -35,7 +35,9 @@ node dist/auditor/index.js --url=http://\[::\]:8000/data/structural/main/test-ma
 - [x] Create a Functional testing setup.
 - [x] Add github Action to run automatic testing suite.
 - [x] Create Helper Browser method.
+- [x] Move to nx based setup.
 - [ ] Fix issue with typescript `type.d.ts` loading from browser compilation.
+- [ ] Having a identifier rule per criteria.
 - [ ] Create Documentation folders to details rules.
 - [ ] Includes a way to provide a list of rules to run. 
 - [ ] Create a way to provide a list of rules to ignore. 
