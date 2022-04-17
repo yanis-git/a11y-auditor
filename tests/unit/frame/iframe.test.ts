@@ -13,7 +13,7 @@ describe('Iframe', function () {
     });
 
 
-    it('should return error when when at least, one iframe present do not have title', () => {
+    it('should return error when at least, one iframe present do not have title', () => {
         return (async () => {
             const page: Page = await getPageWithContent('tests/data/frame/test-frame-without-title.html');
             const result: RuleResult = await isFrameHaveTitle(page);
