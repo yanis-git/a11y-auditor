@@ -3,6 +3,6 @@ import argv from './utils/argv';
 
 
 (new App({
-    isDebug: true,
+    isDebug: false,
     url: argv.url || 'http://localhost:8080',
 })).run();

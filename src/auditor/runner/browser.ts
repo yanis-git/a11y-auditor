@@ -1,5 +1,6 @@
 import {Page, Browser as PuppeteerBrowser} from 'puppeteer';
-import puppeteer from "puppeteer";
+import puppeteer from 'puppeteer-extra'
+import StealthPlugin from 'puppeteer-extra-plugin-stealth';
 
 export class Browser {
     private browser!: PuppeteerBrowser;
@@ -19,12 +20,14 @@ export class Browser {
     }
 
     private async bootstrapBrowser() {
-        this.browser = await puppeteer.launch({
-            headless: !this.isDebug,
-            args: [
-                '--window-size=1920,1080',
-            ],
-        });
+        this.browser = await puppeteer
+            .use(StealthPlugin())
+            .launch({
+                headless: !this.isDebug,
+                args: [
+                    '--window-size=1920,1080',
+                ],
+            });
         this.page = await this.browser.newPage();
     }
 
