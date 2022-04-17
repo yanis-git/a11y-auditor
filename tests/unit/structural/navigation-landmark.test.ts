@@ -9,7 +9,7 @@ describe('Navigation Landmark', function () {
     ${'tests/data/structural/navigation/test-multiple-nav-is-present.html'}
     ${'tests/data/structural/navigation/test-nav-role-is-present.html'}
     ${'tests/data/structural/navigation/test-nav-tag-is-present.html'}
-    `('is should return success when navigation landmark is present at least once on the DOM', (state: {template: string}) => {
+    `('should return success when navigation landmark is present at least once on the DOM', (state: {template: string}) => {
             return (async () => {
                 const page: Page = await getPageWithContent(state.template);
                 const result: RuleResult = await isNavIsPresent(page);
@@ -18,7 +18,7 @@ describe('Navigation Landmark', function () {
             })();
         });
 
-    it('is should return error when no navigation landmark is on the DOM', () => {
+    it('should return error when no navigation landmark is on the DOM', () => {
         return (async () => {
             const page: Page = await getPageWithContent('tests/data/structural/navigation/test-no-nav-element-is-present.html');
             const result: RuleResult = await isNavIsPresent(page);

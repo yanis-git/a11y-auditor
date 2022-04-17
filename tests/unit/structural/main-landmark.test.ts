@@ -9,7 +9,7 @@ describe('Main Landmark', function () {
     ${'tests/data/structural/main/test-main-tag-is-present.html'}
     ${'tests/data/structural/main/test-main-role-is-present.html'}
     ${'tests/data/structural/main/test-multiple-main-with-hidden-role.html'}
-    `('is should return success when main landmark is present once on the DOM', (state: {template: string}) => {
+    `('should return success when main landmark is present once on the DOM', (state: {template: string}) => {
         return (async () => {
             const page: Page = await getPageWithContent(state.template);
             const result: RuleResult = await isMainTagIsPresent(page);
@@ -18,7 +18,7 @@ describe('Main Landmark', function () {
         })();
     });
 
-    it('is should return error when no main landmark is present on the DOM', () => {
+    it('should return error when no main landmark is present on the DOM', () => {
         return (async () => {
             const page: Page = await getPageWithContent('tests/data/structural/main/test-main-role-is-not-present.html');
             const result: RuleResult = await isMainTagIsPresent(page);
@@ -28,7 +28,7 @@ describe('Main Landmark', function () {
     });
 
 
-    it('is should return error when multiple main landmarks is present on the DOM', () => {
+    it('should return error when multiple main landmarks is present on the DOM', () => {
         return (async () => {
             const page: Page = await getPageWithContent('tests/data/structural/main/test-main-role-is-duplicated.html');
             const result: RuleResult = await isMainTagIsPresent(page);
