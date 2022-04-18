@@ -26,6 +26,17 @@ npm run serve
 node dist/auditor/index.js --url=http://\[::\]:8000/data/structural/main/test-main-tag-is-present.html
 ```
 
+---
+
+**What technology is used ?**
+
+On this project i'am using 
+ - [node.js](https://nodejs.org/) to build and run the app.
+ - [nx](https://nx.dev) to orchestrate the build and run of the app.
+ - [puppeteer](https://pptr.dev/) to run the headless checker.
+ - [TypeScript](https://www.typescriptlang.org/) to build the app.
+---
+
 **Pending todo list:** 
 
 - [x] Create setup

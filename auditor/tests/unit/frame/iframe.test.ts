@@ -1,7 +1,7 @@
 import {Page} from 'puppeteer';
 import {getPageWithContent} from '../../helper/page-result.mock';
-import {RuleResult} from '../../../src/auditor/rule/results/rule-result';
-import {isFrameHaveTitle} from '../../../src/auditor/rule/runners/frame/isFrameHaveTitle.checker';
+import {RuleResult} from '../../../src/rule/results/rule-result';
+import {isFrameHaveTitle} from '../../../src/rule/runners/frame/isFrameHaveTitle.checker';
 
 describe('Iframe', function () {
     it('should return success when all iframe present have title', () => {

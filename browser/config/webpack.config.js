@@ -1,13 +1,13 @@
 const path = require('path');
 module.exports = {
   mode: "production",
-  entry: './src/browser/index.ts',
+  entry: './src/index.ts',
   output: {
     library: {
       name: 'a11yAuditor',
       type: "window"
     },
-    path: path.resolve(__dirname, '../dist/browser'),
+    path: path.resolve(__dirname, '../../dist/browser'),
     filename: 'index.js'
   },
   resolve : {
@@ -19,7 +19,7 @@ module.exports = {
         test: /\.tsx?$/,
         loader: 'ts-loader',
         options: {
-          configFile: 'tsconfig.browser.json'
+          configFile: 'tsconfig.json'
         }
       }
     ]

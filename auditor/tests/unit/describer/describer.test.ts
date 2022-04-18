@@ -1,9 +1,9 @@
 import {Page} from 'puppeteer';
 import {getPageWithContent} from '../../helper/page-result.mock';
-import {RuleResult} from '../../../src/auditor/rule/results/rule-result';
+import {RuleResult} from '../../../src/rule/results/rule-result';
 import {
     isDescribedByIsReferToValidElement
-} from '../../../src/auditor/rule/runners/describer/isDescribedByIsReferToValidElement.checker';
+} from '../../../src/rule/runners/describer/isDescribedByIsReferToValidElement.checker';
 
 describe('describer', function () {
     it('should return success when all describer are well mapped.', () => {

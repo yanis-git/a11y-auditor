@@ -3,15 +3,18 @@
   "version": "1.0.0",
   "description": "Chromeless bot to check accessibility criteria",
   "scripts": {
-    "lint": "tslint -c tslint.json 'src/**/*.ts'",
-    "build:browser": "webpack --config bundler/webpack.config.js",
-    "watch:browser": "webpack --config bundler/webpack.config.js --watch",
-    "build:auditor": "tsc --project tsconfig.json",
-    "watch:auditor": "tsc --watch --project tsconfig.json",
+    "build:browser": "nx build browserkit",
+    "watch:browser": "nx watch browserkit",
+    "build:auditor": "nx build auditor",
+    "watch:auditor": "nx watch auditor",
+    "lint:browserkit": "nx lint browserkit",
+    "lint:auditor": "nx lint auditor",
+    "test:browserkit": "true",
+    "test:auditor": "nx test auditor",
     "build": "npm run build:browser && npm run build:auditor",
-    "serve": "python3 -m http.server --directory tests/data",
+    "serve": "python3 -m http.server --directory auditor/tests/data",
     "start": "node dist/auditor/index.js",
-    "test": "jest --runInBand --detectOpenHandles --forceExit"
+    "test": "npm run test:browserkit && npm run test:auditor"
   },
   "repository": {
     "type": "git",
@@ -47,6 +50,9 @@
     "tslint": "^6.1.3",
     "typescript": "^4.6.3",
     "webpack": "^5.72.0",
-    "webpack-cli": "^4.9.2"
+    "webpack-cli": "^4.9.2",
+    "@nrwl/workspace": "13.10.2",
+    "@nrwl/cli": "13.10.2",
+    "nx": "13.10.2"
   }
 }

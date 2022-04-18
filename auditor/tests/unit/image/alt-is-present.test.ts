@@ -1,7 +1,7 @@
 import {Page} from 'puppeteer';
 import {getPageWithContent} from '../../helper/page-result.mock';
-import {isImagesHaveAltChecker} from '../../../src/auditor/rule/runners/image/isImagesHaveAlt.checker';
-import {RuleResult} from '../../../src/auditor/rule/results/rule-result';
+import {isImagesHaveAltChecker} from '../../../src/rule/runners/image/isImagesHaveAlt.checker';
+import {RuleResult} from '../../../src/rule/results/rule-result';
 
 describe('is alt is present', () => {
     it('should return error when image does not have alt attribute', () => {
