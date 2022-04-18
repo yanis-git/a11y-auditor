@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "outDir": "./dist/browser/",
+    "outDir": "../dist/browser/",
     "module": "es2020",
     "target": "es2017",
     "moduleResolution": "node",
@@ -14,9 +14,9 @@
     "lib": ["es2018", "dom", "esnext"]
   },
   "include": [
-    "src/browser/**/*"
+    "src/**/*"
   ],
   "exclude": [
-    "./node_modules"
+    "../node_modules"
   ]
 }
