@@ -1,15 +1,14 @@
 import {Page} from 'puppeteer';
 import {RuleResult} from '../../results/rule-result';
-import {Aria} from './characteristics';
 import {AriaRoles} from './characteristics/type';
 
-const ruleName = 'is elements have only supported aria attribute for specific role ?';
-const ruleDescription = 'Each element should have only supported aria attribute for specific role';
+const ruleName = 'elements have only supported aria attribute ?';
+const ruleDescription = 'this elements should have only supported aria attribute.';
 const sources = [
     "https://www.w3.org/TR/wai-aria-1.1/#namefromcontent",
 ];
 
-export async function isAriaRolesAreSupported(page: Page): Promise<RuleResult> {
+export async function isAriaRolesAreSupported(ariaRoles: AriaRoles, page: Page): Promise<RuleResult> {
     // parsing section
     const results: {role: string, attributes: string[]}[] = await page.evaluate((aria: AriaRoles) => {
         const results = [];
@@ -39,13 +38,13 @@ export async function isAriaRolesAreSupported(page: Page): Promise<RuleResult> {
         }
 
         return results;
-    }, Aria);
+    }, ariaRoles);
 
     // decision section
     if (results.length === 0) {
-        return RuleResult.createSuccessRecommandation(ruleName, ruleDescription);
+        return RuleResult.createSuccessRecommandation(`${ Object.keys(ariaRoles).join(', ') } ${ ruleName }`, ruleDescription);
     } else {
         const issues = results.map(result => `${result.role} : ${result.attributes.join(', ')} are founds and consider as invalid`);
-        return RuleResult.createErrorRecommandation(ruleName, ruleDescription, issues, sources);
+        return RuleResult.createErrorRecommandation(`${ Object.keys(ariaRoles).join(', ') } ${ ruleName }`, ruleDescription, issues, sources);
     }
 }
