@@ -18,11 +18,16 @@ export async function isAriaRolesAreSupported(page: Page): Promise<RuleResult> {
             const invalidAttributeFound = new Set<string>();
             Array.from(elements).forEach(element => {
                 // @ts-ignore
-                invalidAttributeFound.add(...[...element.attributes]
+                const invalidArias = [...element.attributes]
                     .map(e => e.nodeName)
                     // we want to match any aria-* attribute not on the allowed list.
                     .filter(attribute => /^aria-/.test(attribute) && !information.allowedArias.includes(attribute))
-                );
+                ;
+                if (invalidArias.length > 0) {
+                    // @ts-ignore
+                    invalidAttributeFound.add(...invalidArias);
+                }
+
             })
 
             if (invalidAttributeFound.size > 0) {

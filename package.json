@@ -9,6 +9,7 @@
     "watch:auditor": "nx watch auditor",
     "lint:browserkit": "nx lint browserkit",
     "lint:auditor": "nx lint auditor",
+    "watch": "nx run-many --target=watch --all",
     "test:browserkit": "true",
     "test:auditor": "nx test auditor",
     "build": "npm run build:browser && npm run build:auditor",
