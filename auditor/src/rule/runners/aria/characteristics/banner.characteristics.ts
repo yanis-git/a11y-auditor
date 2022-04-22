@@ -1,14 +1,10 @@
 /**
- * TODO : when you use this template. do not forget to change tpl by role name.
- *
- * @source https://www.w3.org/TR/wai-aria-1.1/#tpl
+ * @source https://www.w3.org/TR/wai-aria-1.1/#banner
  */
 import {AriaCharacteristics, AriaRole, AriaRoleDefinition} from './type';
 
-export const tplRole: AriaRole = 'tpl';
-export const tplCharacteristics: AriaCharacteristics = [
-    'aria-expanded',
-    'aria-pressed',
+export const bannerRole: AriaRole = 'banner';
+export const bannerCharacteristics: AriaCharacteristics = [
     'aria-atomic',
     'aria-busy',
     'aria-controls',
@@ -18,6 +14,7 @@ export const tplCharacteristics: AriaCharacteristics = [
     'aria-disabled',
     'aria-dropeffect',
     'aria-errormessage',
+    'aria-expanded',
     'aria-flowto',
     'aria-grabbed',
     'aria-haspopup',
@@ -29,10 +26,10 @@ export const tplCharacteristics: AriaCharacteristics = [
     'aria-live',
     'aria-owns',
     'aria-relevant',
-    'aria-roledescription'
+    'aria-roledescription',
 ];
 
-export const tplRoleDefinition: AriaRoleDefinition = {
-    allowedArias: tplCharacteristics,
-    selector: 'tpl',
+export const bannerRoleDefinition: AriaRoleDefinition = {
+    allowedArias: bannerCharacteristics,
+    selector: 'header, [role=banner]',
 }
