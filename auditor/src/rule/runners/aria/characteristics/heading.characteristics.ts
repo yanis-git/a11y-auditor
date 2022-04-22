@@ -1,10 +1,10 @@
 /**
- * @source https://www.w3.org/TR/wai-aria-1.1/#header
+ * @source https://www.w3.org/TR/wai-aria-1.1/#heading
  */
 import {AriaCharacteristics, AriaRole, AriaRoleDefinition} from './type';
 
-export const headerRole: AriaRole = 'header';
-export const headerCharacteristics: AriaCharacteristics = [
+export const headingRole: AriaRole = 'heading';
+export const headingCharacteristics: AriaCharacteristics = [
     'aria-atomic',
     'aria-busy',
     'aria-controls',
@@ -30,7 +30,7 @@ export const headerCharacteristics: AriaCharacteristics = [
     'aria-level'
 ];
 
-export const headerRoleDefinition: AriaRoleDefinition = {
-    allowedArias: headerCharacteristics,
-    selector: 'h1, h2, h3, h4, h5, h6, role[header]',
+export const headingRoleDefinition: AriaRoleDefinition = {
+    allowedArias: headingCharacteristics,
+    selector: 'h1, h2, h3, h4, h5, h6, role[heading]',
 }
