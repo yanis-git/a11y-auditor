@@ -7,7 +7,7 @@ import {articleRole, articleRoleDefinition} from './article.characteristics';
 import {bannerRole, bannerRoleDefinition} from './banner.characteristics';
 import {checkboxRole, checkboxRoleDefinition} from './checkbox.characteristics';
 import {complementaryRole, complementaryRoleDefinition} from './complementary.characteristics';
-import {headingRole, headingCharacteristics, headingRoleDefinition} from './heading.characteristics';
+import {headingRole, headingRoleDefinition} from './heading.characteristics';
 
 /**
  * @source https://www.w3.org/TR/wai-aria-1.1/#namefromcontent
