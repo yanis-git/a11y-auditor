@@ -33,4 +33,12 @@ describe('describer', function () {
             expect(result.isError()).toBe(true);
         })();
     });
+    it('should return success when there is single label or multiple with same value', () => {
+        return (async () => {
+            const page: Page = await getPageWithContent('tests/data/describer/test-multiple-describer-valid.html');
+            const result: RuleResult = await isLabelAreInConflict(page);
+            expect(result.getHints().length).toBe(0);
+            expect(result.isSuccess()).toBe(true);
+        })();
+    });
 });
