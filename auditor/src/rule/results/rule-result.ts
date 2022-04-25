@@ -32,4 +32,13 @@ export class RuleResult {
     getHints(): string[] {
         return this.hints;
     }
+
+    toJson(): {name:string, status: string, description: string, hints: string[]} {
+        return {
+            name: this.name,
+            status: this.status,
+            description: this.description,
+            hints: this.hints
+        }
+    }
 }

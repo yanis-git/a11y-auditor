@@ -35,7 +35,7 @@ export class App {
     async run() {
         const page = await this.browser.start(this.config.url);
         const results = await this.runRules(page);
-        console.log(results);
+        console.table(results.map( result => result.toJson() ));
         if (!this.config.isDebug) {
             await this.browser.stop();
         }
@@ -44,7 +44,11 @@ export class App {
     private async runRules(page: Page): Promise<RuleResult[]> {
         const results: RuleResult[] = [];
         for (const rule of runners) {
-            results.push(await rule(page))
+            try {
+                results.push(await rule(page))
+            } catch (e) {
+                console.error(e);
+            }
         }
         return results;
     }
