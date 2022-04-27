@@ -41,7 +41,6 @@ import {menuitemRole, menuitemRoleDefinition} from './menuitem.characteristics';
 import {menuitemcheckboxRole, menuitemcheckboxRoleDefinition} from './menuitemcheckbox.characteristics';
 import {menuitemradioRole, menuitemradioRoleDefinition} from './menuitemradio.characteristics';
 import {navigationRole, navigationRoleDefinition} from './navigation.characteristics';
-import {noneRole, noneRoleDefinition} from './none.characteristics';
 import {noteRole, noteRoleDefinition} from './note.characteristics';
 import {optionRole, optionRoleDefinition} from './option.characteristics';
 import {presentationRole, presentationRoleDefinition} from './presentation.characteristics';
@@ -127,7 +126,6 @@ export const Aria: AriaRoles = {
     [menuitemcheckboxRole]: menuitemcheckboxRoleDefinition,
     [menuitemradioRole]: menuitemradioRoleDefinition,
     [navigationRole]: navigationRoleDefinition,
-    [noneRole]: noneRoleDefinition,
     [noteRole]: noteRoleDefinition,
     [optionRole]: optionRoleDefinition,
     [presentationRole]: presentationRoleDefinition,

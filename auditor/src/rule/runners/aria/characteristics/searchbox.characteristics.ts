@@ -7,7 +7,33 @@ import {AriaCharacteristics, AriaRole, AriaRoleDefinition} from './type';
 
 export const searchboxRole: AriaRole = 'searchbox';
 export const searchboxCharacteristics: AriaCharacteristics = [
-
+    "aria-activedescendant",
+    "aria-atomic",
+    "aria-autocomplete",
+    "aria-busy",
+    "aria-controls",
+    "aria-current",
+    "aria-describedby",
+    "aria-details",
+    "aria-disabled",
+    "aria-dropeffect",
+    "aria-errormessage",
+    "aria-flowto",
+    "aria-grabbed",
+    "aria-haspopup",
+    "aria-hidden",
+    "aria-invalid",
+    "aria-keyshortcuts",
+    "aria-label",
+    "aria-labelledby",
+    "aria-live",
+    "aria-multiline",
+    "aria-owns",
+    "aria-placeholder",
+    "aria-readonly",
+    "aria-relevant",
+    "aria-required",
+    "aria-roledescription"
 ];
 
 export const searchboxRoleDefinition: AriaRoleDefinition = {
