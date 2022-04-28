@@ -14,6 +14,7 @@ export class Browser {
         if (!this.isBootstrapped()) {
             await this.bootstrapBrowser();
         }
+        await this.page.setBypassCSP(true);
         await this.page.goto(url);
         await this.page.addScriptTag({ path: this.getBrowserScript() });
         return this.page;
