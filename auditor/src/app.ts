@@ -3,6 +3,7 @@ import {Page} from 'puppeteer';
 import {runners} from './rule';
 import {RuleResult} from './rule/results/rule-result';
 import path from 'path';
+import * as fs from 'fs';
 
 export interface AppConfig {
     url: string;
@@ -35,7 +36,7 @@ export class App {
     async run() {
         const page = await this.browser.start(this.config.url);
         const results = await this.runRules(page);
-        console.table(results.map( result => result.toJson() ));
+        this.writeResults(results);
         if (!this.config.isDebug) {
             await this.browser.stop();
         }
@@ -45,11 +46,20 @@ export class App {
         const results: RuleResult[] = [];
         for (const rule of runners) {
             try {
-                results.push(await rule(page))
+                const runResult = await rule(page);
+                results.push(...(Array.isArray(runResult) ? runResult : [runResult]));
             } catch (e) {
                 console.error(e);
             }
         }
         return results;
+    }
+
+    private writeResults(results: RuleResult[]) {
+        // console.table(results.map( result => result.toJson() ));
+        fs.writeFileSync(
+            path.join(this.config.path.projectDir, '../results/results.json'),
+            JSON.stringify(results.map( result => result.toJson()), null, 2)
+        );
     }
 }

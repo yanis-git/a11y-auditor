@@ -8,12 +8,16 @@ const sources = [
     "https://github.com/dequelabs/axe-core"
 ];
 
-export async function performAxeAudit(page: Page): Promise<RuleResult> {
+export async function performAxeAudit(page: Page): Promise<RuleResult[]> {
     // parsing section
     const results = await new AxePuppeteer(page).analyze();
-    if (results.violations.length !== 0) {
-        return RuleResult.createErrorRecommandation(ruleName, ruleDescription, results.violations.map(result => `${result.id} - ${result.description}`))
-    } else {
-        return RuleResult.createSuccessRecommandation(ruleName, ruleDescription);
-    }
+    const ruleResults:RuleResult[] = [];
+    results.passes.forEach(pass => {
+        ruleResults.push(RuleResult.createSuccessRecommandation(pass.id, pass.description));
+    });
+    results.violations.forEach(pass => {
+        ruleResults.push(RuleResult.createErrorRecommandation(pass.id, pass.description, pass.nodes.map(node => node.html)));
+    });
+
+    return ruleResults;
 }

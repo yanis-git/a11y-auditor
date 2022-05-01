@@ -6,7 +6,7 @@ import {frameRunners} from './runners/frame';
 import {describerRunners} from './runners/describer';
 import {ariaRunners} from './runners/aria';
 import {axeRunners} from './runners/axe';
-export type Runner = (page: Page) => Promise<RuleResult>;
+export type Runner = (page: Page) => Promise<RuleResult | RuleResult[]>;
 
 export const runners: Runner[] = [
     ...imageRunners,
