@@ -11,8 +11,9 @@ const sources = [
 export async function performAxeAudit(page: Page): Promise<RuleResult> {
     // parsing section
     const results = await new AxePuppeteer(page).analyze();
-    if (results.violations.length === 0)
-        return RuleResult.createSuccessRecommandation(ruleName, ruleDescription);
-    else
+    if (results.violations.length !== 0) {
         return RuleResult.createErrorRecommandation(ruleName, ruleDescription, results.violations.map(result => `${result.id} - ${result.description}`))
+    } else {
+        return RuleResult.createSuccessRecommandation(ruleName, ruleDescription);
+    }
 }
