@@ -1,3 +1,6 @@
 {
-  "compilerOptions": {}
+  "compilerOptions": {
+    "target": "ES2017",
+    "module": "esnext"
+  }
 }

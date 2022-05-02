@@ -35,6 +35,8 @@ On this project i'am using
  - [nx](https://nx.dev) to orchestrate the build and run of the app.
  - [puppeteer](https://pptr.dev/) to run the headless checker.
  - [TypeScript](https://www.typescriptlang.org/) to build the app.
+ - [Angular](https://angular.io/) to build the dashboard.
+
 ---
 
 **Pending todo list:** 
@@ -48,6 +50,7 @@ On this project i'am using
 - [x] Create Helper Browser method.
 - [x] Move to nx based setup.
 - [ ] Fix issue with typescript `type.d.ts` loading from browser compilation.
+- [ ] Create a v0 dashboard to list result in convenient way.
 - [ ] Having a identifier rule per criteria.
 - [ ] Create Documentation folders to details rules.
 - [ ] Includes a way to provide a list of rules to run. 
