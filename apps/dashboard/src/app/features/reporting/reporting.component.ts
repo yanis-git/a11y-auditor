@@ -1,4 +1,5 @@
 import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
+import {ReportService} from '../api/report.service';
 
 @Component({
   selector: 'a11y-reporting',
@@ -12,9 +13,10 @@ import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 })
 export class ReportingComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _reportService: ReportService) { }
 
   ngOnInit(): void {
+    this._reportService.fetchReport().subscribe(console.log);
   }
 
 }

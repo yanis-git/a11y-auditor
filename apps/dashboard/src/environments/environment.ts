@@ -6,7 +6,7 @@ export const environment = {
   production: false,
   api: {
     results: {
-      url: 'http://localhost:8000',
+      url: 'http://localhost:4200/assets/results.json',
     }
   }
 };

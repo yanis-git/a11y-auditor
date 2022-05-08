@@ -4,6 +4,8 @@ import { FilterComponent } from './containers/filter/filter.component';
 import { RenderComponent } from './containers/render/render.component';
 import { CriteriaComponent } from './ui/criteria/criteria.component';
 import { ReportingComponent } from './reporting.component';
+import {HttpClientModule} from '@angular/common/http';
+import {ReportService} from '../api/report.service';
 
 
 
@@ -15,8 +17,10 @@ import { ReportingComponent } from './reporting.component';
     ReportingComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    HttpClientModule
   ],
+  providers: [ReportService],
   exports: [ReportingComponent]
 })
 export class ReportingModule { }

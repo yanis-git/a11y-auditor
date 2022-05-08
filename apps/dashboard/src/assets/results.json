@@ -1,0 +1,851 @@
+[
+  {
+    "name": "Image have alt attribute ?",
+    "status": "success",
+    "description": "Images should have alt attribute, it can be empty or contain text",
+    "hints": []
+  },
+  {
+    "name": "Image have alt attribute override by something else ?",
+    "status": "success",
+    "description": "Images tag must use alt attribute, not any other way such as aria-label, title etc",
+    "hints": []
+  },
+  {
+    "name": "Is navigation is present ?",
+    "status": "success",
+    "description": "primary navigation is required, it help a lot to quickly identify which page can be visited",
+    "hints": []
+  },
+  {
+    "name": "Does all Frames have a title ?",
+    "status": "success",
+    "description": "When you have iframe on your page, you should add title attribute which describe your iframe",
+    "hints": []
+  },
+  {
+    "name": "DescribeBy refer to a valid id ?",
+    "status": "success",
+    "description": "when you use describedBy, you should refer to a valid id, present on the page",
+    "hints": []
+  },
+  {
+    "name": "Do we have multiple describer at once ?",
+    "status": "error",
+    "description": "there is multiple labelling, we should use only once per element to avoid different behavior of the browser.",
+    "hints": [
+      "aria-label=Vendor Search and placeholder=Search..."
+    ]
+  },
+  {
+    "name": "link elements have only supported aria attribute ?",
+    "status": "success",
+    "description": "this elements should have only supported aria attribute.",
+    "hints": []
+  },
+  {
+    "name": "button elements have only supported aria attribute ?",
+    "status": "error",
+    "description": "this elements should have only supported aria attribute.",
+    "hints": [
+      "button : aria-modal are founds and consider as invalid"
+    ]
+  },
+  {
+    "name": "alert elements have only supported aria attribute ?",
+    "status": "success",
+    "description": "this elements should have only supported aria attribute.",
+    "hints": []
+  },
+  {
+    "name": "alertdialog elements have only supported aria attribute ?",
+    "status": "success",
+    "description": "this elements should have only supported aria attribute.",
+    "hints": []
+  },
+  {
+    "name": "article elements have only supported aria attribute ?",
+    "status": "success",
+    "description": "this elements should have only supported aria attribute.",
+    "hints": []
+  },
+  {
+    "name": "banner elements have only supported aria attribute ?",
+    "status": "success",
+    "description": "this elements should have only supported aria attribute.",
+    "hints": []
+  },
+  {
+    "name": "checkbox elements have only supported aria attribute ?",
+    "status": "success",
+    "description": "this elements should have only supported aria attribute.",
+    "hints": []
+  },
+  {
+    "name": "complementary elements have only supported aria attribute ?",
+    "status": "success",
+    "description": "this elements should have only supported aria attribute.",
+    "hints": []
+  },
+  {
+    "name": "heading elements have only supported aria attribute ?",
+    "status": "success",
+    "description": "this elements should have only supported aria attribute.",
+    "hints": []
+  },
+  {
+    "name": "application elements have only supported aria attribute ?",
+    "status": "success",
+    "description": "this elements should have only supported aria attribute.",
+    "hints": []
+  },
+  {
+    "name": "cell elements have only supported aria attribute ?",
+    "status": "success",
+    "description": "this elements should have only supported aria attribute.",
+    "hints": []
+  },
+  {
+    "name": "columnheader elements have only supported aria attribute ?",
+    "status": "success",
+    "description": "this elements should have only supported aria attribute.",
+    "hints": []
+  },
+  {
+    "name": "combobox elements have only supported aria attribute ?",
+    "status": "success",
+    "description": "this elements should have only supported aria attribute.",
+    "hints": []
+  },
+  {
+    "name": "command elements have only supported aria attribute ?",
+    "status": "success",
+    "description": "this elements should have only supported aria attribute.",
+    "hints": []
+  },
+  {
+    "name": "composite elements have only supported aria attribute ?",
+    "status": "success",
+    "description": "this elements should have only supported aria attribute.",
+    "hints": []
+  },
+  {
+    "name": "contentinfo elements have only supported aria attribute ?",
+    "status": "success",
+    "description": "this elements should have only supported aria attribute.",
+    "hints": []
+  },
+  {
+    "name": "definition elements have only supported aria attribute ?",
+    "status": "success",
+    "description": "this elements should have only supported aria attribute.",
+    "hints": []
+  },
+  {
+    "name": "dialog elements have only supported aria attribute ?",
+    "status": "success",
+    "description": "this elements should have only supported aria attribute.",
+    "hints": []
+  },
+  {
+    "name": "directory elements have only supported aria attribute ?",
+    "status": "success",
+    "description": "this elements should have only supported aria attribute.",
+    "hints": []
+  },
+  {
+    "name": "document elements have only supported aria attribute ?",
+    "status": "success",
+    "description": "this elements should have only supported aria attribute.",
+    "hints": []
+  },
+  {
+    "name": "feed elements have only supported aria attribute ?",
+    "status": "success",
+    "description": "this elements should have only supported aria attribute.",
+    "hints": []
+  },
+  {
+    "name": "figure elements have only supported aria attribute ?",
+    "status": "success",
+    "description": "this elements should have only supported aria attribute.",
+    "hints": []
+  },
+  {
+    "name": "form elements have only supported aria attribute ?",
+    "status": "success",
+    "description": "this elements should have only supported aria attribute.",
+    "hints": []
+  },
+  {
+    "name": "grid elements have only supported aria attribute ?",
+    "status": "success",
+    "description": "this elements should have only supported aria attribute.",
+    "hints": []
+  },
+  {
+    "name": "gridcell elements have only supported aria attribute ?",
+    "status": "success",
+    "description": "this elements should have only supported aria attribute.",
+    "hints": []
+  },
+  {
+    "name": "group elements have only supported aria attribute ?",
+    "status": "success",
+    "description": "this elements should have only supported aria attribute.",
+    "hints": []
+  },
+  {
+    "name": "img elements have only supported aria attribute ?",
+    "status": "success",
+    "description": "this elements should have only supported aria attribute.",
+    "hints": []
+  },
+  {
+    "name": "input elements have only supported aria attribute ?",
+    "status": "error",
+    "description": "this elements should have only supported aria attribute.",
+    "hints": [
+      "input : aria-checked are founds and consider as invalid"
+    ]
+  },
+  {
+    "name": "landmark elements have only supported aria attribute ?",
+    "status": "success",
+    "description": "this elements should have only supported aria attribute.",
+    "hints": []
+  },
+  {
+    "name": "list elements have only supported aria attribute ?",
+    "status": "success",
+    "description": "this elements should have only supported aria attribute.",
+    "hints": []
+  },
+  {
+    "name": "listbox elements have only supported aria attribute ?",
+    "status": "success",
+    "description": "this elements should have only supported aria attribute.",
+    "hints": []
+  },
+  {
+    "name": "listitem elements have only supported aria attribute ?",
+    "status": "error",
+    "description": "this elements should have only supported aria attribute.",
+    "hints": [
+      "listitem : aria-selected are founds and consider as invalid"
+    ]
+  },
+  {
+    "name": "log elements have only supported aria attribute ?",
+    "status": "success",
+    "description": "this elements should have only supported aria attribute.",
+    "hints": []
+  },
+  {
+    "name": "main elements have only supported aria attribute ?",
+    "status": "success",
+    "description": "this elements should have only supported aria attribute.",
+    "hints": []
+  },
+  {
+    "name": "marquee elements have only supported aria attribute ?",
+    "status": "success",
+    "description": "this elements should have only supported aria attribute.",
+    "hints": []
+  },
+  {
+    "name": "math elements have only supported aria attribute ?",
+    "status": "success",
+    "description": "this elements should have only supported aria attribute.",
+    "hints": []
+  },
+  {
+    "name": "menu elements have only supported aria attribute ?",
+    "status": "success",
+    "description": "this elements should have only supported aria attribute.",
+    "hints": []
+  },
+  {
+    "name": "menubar elements have only supported aria attribute ?",
+    "status": "success",
+    "description": "this elements should have only supported aria attribute.",
+    "hints": []
+  },
+  {
+    "name": "menuitem elements have only supported aria attribute ?",
+    "status": "success",
+    "description": "this elements should have only supported aria attribute.",
+    "hints": []
+  },
+  {
+    "name": "menuitemcheckbox elements have only supported aria attribute ?",
+    "status": "success",
+    "description": "this elements should have only supported aria attribute.",
+    "hints": []
+  },
+  {
+    "name": "menuitemradio elements have only supported aria attribute ?",
+    "status": "success",
+    "description": "this elements should have only supported aria attribute.",
+    "hints": []
+  },
+  {
+    "name": "navigation elements have only supported aria attribute ?",
+    "status": "success",
+    "description": "this elements should have only supported aria attribute.",
+    "hints": []
+  },
+  {
+    "name": "note elements have only supported aria attribute ?",
+    "status": "success",
+    "description": "this elements should have only supported aria attribute.",
+    "hints": []
+  },
+  {
+    "name": "option elements have only supported aria attribute ?",
+    "status": "success",
+    "description": "this elements should have only supported aria attribute.",
+    "hints": []
+  },
+  {
+    "name": "presentation elements have only supported aria attribute ?",
+    "status": "success",
+    "description": "this elements should have only supported aria attribute.",
+    "hints": []
+  },
+  {
+    "name": "progressbar elements have only supported aria attribute ?",
+    "status": "success",
+    "description": "this elements should have only supported aria attribute.",
+    "hints": []
+  },
+  {
+    "name": "radio elements have only supported aria attribute ?",
+    "status": "success",
+    "description": "this elements should have only supported aria attribute.",
+    "hints": []
+  },
+  {
+    "name": "radiogroup elements have only supported aria attribute ?",
+    "status": "success",
+    "description": "this elements should have only supported aria attribute.",
+    "hints": []
+  },
+  {
+    "name": "range elements have only supported aria attribute ?",
+    "status": "success",
+    "description": "this elements should have only supported aria attribute.",
+    "hints": []
+  },
+  {
+    "name": "region elements have only supported aria attribute ?",
+    "status": "success",
+    "description": "this elements should have only supported aria attribute.",
+    "hints": []
+  },
+  {
+    "name": "roletype elements have only supported aria attribute ?",
+    "status": "success",
+    "description": "this elements should have only supported aria attribute.",
+    "hints": []
+  },
+  {
+    "name": "row elements have only supported aria attribute ?",
+    "status": "success",
+    "description": "this elements should have only supported aria attribute.",
+    "hints": []
+  },
+  {
+    "name": "rowgroup elements have only supported aria attribute ?",
+    "status": "success",
+    "description": "this elements should have only supported aria attribute.",
+    "hints": []
+  },
+  {
+    "name": "rowheader elements have only supported aria attribute ?",
+    "status": "success",
+    "description": "this elements should have only supported aria attribute.",
+    "hints": []
+  },
+  {
+    "name": "scrollbar elements have only supported aria attribute ?",
+    "status": "success",
+    "description": "this elements should have only supported aria attribute.",
+    "hints": []
+  },
+  {
+    "name": "search elements have only supported aria attribute ?",
+    "status": "success",
+    "description": "this elements should have only supported aria attribute.",
+    "hints": []
+  },
+  {
+    "name": "searchbox elements have only supported aria attribute ?",
+    "status": "success",
+    "description": "this elements should have only supported aria attribute.",
+    "hints": []
+  },
+  {
+    "name": "section elements have only supported aria attribute ?",
+    "status": "success",
+    "description": "this elements should have only supported aria attribute.",
+    "hints": []
+  },
+  {
+    "name": "sectionhead elements have only supported aria attribute ?",
+    "status": "success",
+    "description": "this elements should have only supported aria attribute.",
+    "hints": []
+  },
+  {
+    "name": "select elements have only supported aria attribute ?",
+    "status": "success",
+    "description": "this elements should have only supported aria attribute.",
+    "hints": []
+  },
+  {
+    "name": "separator elements have only supported aria attribute ?",
+    "status": "success",
+    "description": "this elements should have only supported aria attribute.",
+    "hints": []
+  },
+  {
+    "name": "slider elements have only supported aria attribute ?",
+    "status": "success",
+    "description": "this elements should have only supported aria attribute.",
+    "hints": []
+  },
+  {
+    "name": "spinbutton elements have only supported aria attribute ?",
+    "status": "success",
+    "description": "this elements should have only supported aria attribute.",
+    "hints": []
+  },
+  {
+    "name": "status elements have only supported aria attribute ?",
+    "status": "success",
+    "description": "this elements should have only supported aria attribute.",
+    "hints": []
+  },
+  {
+    "name": "structure elements have only supported aria attribute ?",
+    "status": "success",
+    "description": "this elements should have only supported aria attribute.",
+    "hints": []
+  },
+  {
+    "name": "switch elements have only supported aria attribute ?",
+    "status": "success",
+    "description": "this elements should have only supported aria attribute.",
+    "hints": []
+  },
+  {
+    "name": "tab elements have only supported aria attribute ?",
+    "status": "success",
+    "description": "this elements should have only supported aria attribute.",
+    "hints": []
+  },
+  {
+    "name": "table elements have only supported aria attribute ?",
+    "status": "success",
+    "description": "this elements should have only supported aria attribute.",
+    "hints": []
+  },
+  {
+    "name": "tablist elements have only supported aria attribute ?",
+    "status": "success",
+    "description": "this elements should have only supported aria attribute.",
+    "hints": []
+  },
+  {
+    "name": "tabpanel elements have only supported aria attribute ?",
+    "status": "success",
+    "description": "this elements should have only supported aria attribute.",
+    "hints": []
+  },
+  {
+    "name": "term elements have only supported aria attribute ?",
+    "status": "success",
+    "description": "this elements should have only supported aria attribute.",
+    "hints": []
+  },
+  {
+    "name": "textbox elements have only supported aria attribute ?",
+    "status": "success",
+    "description": "this elements should have only supported aria attribute.",
+    "hints": []
+  },
+  {
+    "name": "timer elements have only supported aria attribute ?",
+    "status": "success",
+    "description": "this elements should have only supported aria attribute.",
+    "hints": []
+  },
+  {
+    "name": "toolbar elements have only supported aria attribute ?",
+    "status": "success",
+    "description": "this elements should have only supported aria attribute.",
+    "hints": []
+  },
+  {
+    "name": "tooltip elements have only supported aria attribute ?",
+    "status": "success",
+    "description": "this elements should have only supported aria attribute.",
+    "hints": []
+  },
+  {
+    "name": "tree elements have only supported aria attribute ?",
+    "status": "success",
+    "description": "this elements should have only supported aria attribute.",
+    "hints": []
+  },
+  {
+    "name": "treegrid elements have only supported aria attribute ?",
+    "status": "success",
+    "description": "this elements should have only supported aria attribute.",
+    "hints": []
+  },
+  {
+    "name": "treeitem elements have only supported aria attribute ?",
+    "status": "success",
+    "description": "this elements should have only supported aria attribute.",
+    "hints": []
+  },
+  {
+    "name": "widget elements have only supported aria attribute ?",
+    "status": "success",
+    "description": "this elements should have only supported aria attribute.",
+    "hints": []
+  },
+  {
+    "name": "window elements have only supported aria attribute ?",
+    "status": "success",
+    "description": "this elements should have only supported aria attribute.",
+    "hints": []
+  },
+  {
+    "name": "aria-allowed-attr",
+    "status": "success",
+    "description": "Ensures ARIA attributes are allowed for an element's role",
+    "hints": []
+  },
+  {
+    "name": "aria-allowed-role",
+    "status": "success",
+    "description": "Ensures role attribute has an appropriate value for the element",
+    "hints": []
+  },
+  {
+    "name": "aria-dialog-name",
+    "status": "success",
+    "description": "Ensures every ARIA dialog and alertdialog node has an accessible name",
+    "hints": []
+  },
+  {
+    "name": "aria-hidden-body",
+    "status": "success",
+    "description": "Ensures aria-hidden='true' is not present on the document body.",
+    "hints": []
+  },
+  {
+    "name": "aria-hidden-focus",
+    "status": "success",
+    "description": "Ensures aria-hidden elements do not contain focusable elements",
+    "hints": []
+  },
+  {
+    "name": "aria-required-attr",
+    "status": "success",
+    "description": "Ensures elements with ARIA roles have all required ARIA attributes",
+    "hints": []
+  },
+  {
+    "name": "aria-required-children",
+    "status": "success",
+    "description": "Ensures elements with an ARIA role that require child roles contain them",
+    "hints": []
+  },
+  {
+    "name": "aria-required-parent",
+    "status": "success",
+    "description": "Ensures elements with an ARIA role that require parent roles are contained by them",
+    "hints": []
+  },
+  {
+    "name": "aria-roles",
+    "status": "success",
+    "description": "Ensures all elements with a role attribute use a valid value",
+    "hints": []
+  },
+  {
+    "name": "aria-valid-attr-value",
+    "status": "success",
+    "description": "Ensures all ARIA attributes have valid values",
+    "hints": []
+  },
+  {
+    "name": "aria-valid-attr",
+    "status": "success",
+    "description": "Ensures attributes that begin with aria- are valid ARIA attributes",
+    "hints": []
+  },
+  {
+    "name": "avoid-inline-spacing",
+    "status": "success",
+    "description": "Ensure that text spacing set through style attributes can be adjusted with custom stylesheets",
+    "hints": []
+  },
+  {
+    "name": "button-name",
+    "status": "success",
+    "description": "Ensures buttons have discernible text",
+    "hints": []
+  },
+  {
+    "name": "bypass",
+    "status": "success",
+    "description": "Ensures each page has at least one mechanism for a user to bypass navigation and jump straight to the content",
+    "hints": []
+  },
+  {
+    "name": "color-contrast",
+    "status": "success",
+    "description": "Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds",
+    "hints": []
+  },
+  {
+    "name": "document-title",
+    "status": "success",
+    "description": "Ensures each HTML document contains a non-empty <title> element",
+    "hints": []
+  },
+  {
+    "name": "duplicate-id-active",
+    "status": "success",
+    "description": "Ensures every id attribute value of active elements is unique",
+    "hints": []
+  },
+  {
+    "name": "duplicate-id-aria",
+    "status": "success",
+    "description": "Ensures every id attribute value used in ARIA and in labels is unique",
+    "hints": []
+  },
+  {
+    "name": "duplicate-id",
+    "status": "success",
+    "description": "Ensures every id attribute value is unique",
+    "hints": []
+  },
+  {
+    "name": "empty-heading",
+    "status": "success",
+    "description": "Ensures headings have discernible text",
+    "hints": []
+  },
+  {
+    "name": "heading-order",
+    "status": "success",
+    "description": "Ensures the order of headings is semantically correct",
+    "hints": []
+  },
+  {
+    "name": "html-has-lang",
+    "status": "success",
+    "description": "Ensures every HTML document has a lang attribute",
+    "hints": []
+  },
+  {
+    "name": "html-lang-valid",
+    "status": "success",
+    "description": "Ensures the lang attribute of the <html> element has a valid value",
+    "hints": []
+  },
+  {
+    "name": "identical-links-same-purpose",
+    "status": "success",
+    "description": "Ensure that links with the same accessible name serve a similar purpose",
+    "hints": []
+  },
+  {
+    "name": "image-alt",
+    "status": "success",
+    "description": "Ensures <img> elements have alternate text or a role of none or presentation",
+    "hints": []
+  },
+  {
+    "name": "image-redundant-alt",
+    "status": "success",
+    "description": "Ensure image alternative is not repeated as text",
+    "hints": []
+  },
+  {
+    "name": "landmark-banner-is-top-level",
+    "status": "success",
+    "description": "Ensures the banner landmark is at top level",
+    "hints": []
+  },
+  {
+    "name": "landmark-contentinfo-is-top-level",
+    "status": "success",
+    "description": "Ensures the contentinfo landmark is at top level",
+    "hints": []
+  },
+  {
+    "name": "landmark-main-is-top-level",
+    "status": "success",
+    "description": "Ensures the main landmark is at top level",
+    "hints": []
+  },
+  {
+    "name": "landmark-no-duplicate-banner",
+    "status": "success",
+    "description": "Ensures the document has at most one banner landmark",
+    "hints": []
+  },
+  {
+    "name": "landmark-no-duplicate-contentinfo",
+    "status": "success",
+    "description": "Ensures the document has at most one contentinfo landmark",
+    "hints": []
+  },
+  {
+    "name": "landmark-no-duplicate-main",
+    "status": "success",
+    "description": "Ensures the document has at most one main landmark",
+    "hints": []
+  },
+  {
+    "name": "landmark-one-main",
+    "status": "success",
+    "description": "Ensures the document has a main landmark",
+    "hints": []
+  },
+  {
+    "name": "landmark-unique",
+    "status": "success",
+    "description": "Landmarks should have a unique role or role/label/title (i.e. accessible name) combination",
+    "hints": []
+  },
+  {
+    "name": "link-name",
+    "status": "success",
+    "description": "Ensures links have discernible text",
+    "hints": []
+  },
+  {
+    "name": "list",
+    "status": "success",
+    "description": "Ensures that lists are structured correctly",
+    "hints": []
+  },
+  {
+    "name": "listitem",
+    "status": "success",
+    "description": "Ensures <li> elements are used semantically",
+    "hints": []
+  },
+  {
+    "name": "meta-viewport-large",
+    "status": "success",
+    "description": "Ensures <meta name=\"viewport\"> can scale a significant amount",
+    "hints": []
+  },
+  {
+    "name": "meta-viewport",
+    "status": "success",
+    "description": "Ensures <meta name=\"viewport\"> does not disable text scaling and zooming",
+    "hints": []
+  },
+  {
+    "name": "nested-interactive",
+    "status": "success",
+    "description": "Ensures interactive controls are not nested as they are not always announced by screen readers or can cause focus problems for assistive technologies",
+    "hints": []
+  },
+  {
+    "name": "page-has-heading-one",
+    "status": "success",
+    "description": "Ensure that the page, or at least one of its frames contains a level-one heading",
+    "hints": []
+  },
+  {
+    "name": "presentation-role-conflict",
+    "status": "success",
+    "description": "Flags elements whose role is none or presentation and which cause the role conflict resolution to trigger.",
+    "hints": []
+  },
+  {
+    "name": "region",
+    "status": "success",
+    "description": "Ensures all page content is contained by landmarks",
+    "hints": []
+  },
+  {
+    "name": "role-img-alt",
+    "status": "success",
+    "description": "Ensures [role='img'] elements have alternate text",
+    "hints": []
+  },
+  {
+    "name": "tabindex",
+    "status": "success",
+    "description": "Ensures tabindex attribute values are not greater than 0",
+    "hints": []
+  },
+  {
+    "name": "valid-lang",
+    "status": "success",
+    "description": "Ensures lang attributes have valid values",
+    "hints": []
+  },
+  {
+    "name": "aria-allowed-role",
+    "status": "error",
+    "description": "Ensures role attribute has an appropriate value for the element",
+    "hints": [
+      "<button class=\"btn-toggle__btn onetrust-opener\" aria-modal=\"true\" role=\"alertdialog\">\n    <img src=\"assets/images/cookie-setting/cookie.svg\" alt=\"\">\n    <span class=\"btn-toggle__text\">\n        <span class=\"btn-toggle__text__inner\">Cookies settings</span>\n      </span>\n  </button>"
+    ]
+  },
+  {
+    "name": "button-name",
+    "status": "error",
+    "description": "Ensures buttons have discernible text",
+    "hints": [
+      "<button class=\"btn-toggle__btn onetrust-opener\" aria-modal=\"true\" role=\"alertdialog\">\n    <img src=\"assets/images/cookie-setting/cookie.svg\" alt=\"\">\n    <span class=\"btn-toggle__text\">\n        <span class=\"btn-toggle__text__inner\">Cookies settings</span>\n      </span>\n  </button>"
+    ]
+  },
+  {
+    "name": "color-contrast",
+    "status": "error",
+    "description": "Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds",
+    "hints": [
+      "<a href=\"https://rapport-integre.bnpparibas/2020/\" aria-current=\"false\" aria-label=\"Access the page in French\" class=\"disabled\">FR</a>",
+      "<a href=\"https://integrated-report.bnpparibas/2020/\" aria-current=\"true\" aria-label=\"Access the page in English\" class=\"active\">EN</a>",
+      "<a target=\"_blank\" href=\"https://group.bnpparibas/en/\"> Group.BNPPARIBAS </a>",
+      "<span class=\"banner-text\">Read the <br>e-document</span>",
+      "<span class=\"banner-text\">The Group <br>at a glance</span>",
+      "<span class=\"banner-text\">BNP Paribas <br>by your side</span>",
+      "<span class=\"banner-text\">20 years <br>in a changing world</span>",
+      "<a onfocusanimation=\"\" class=\"btn-icon btn-icon__primary animate-icon\" href=\"doc/article/74/\" target=\"_blank\" aria-label=\"Find out more on the section BNP Paribas, at a glance - New Window\">",
+      "<p class=\"ng-tns-c31-2\">A look back at an unprecedented year, during which the BNP Paribas Group confirmed its role in supporting the economy and society.</p>",
+      "<a onfocusanimation=\"\" class=\"btn-icon btn-icon__secondary btn-icon--sm animate-icon\" href=\"doc/article/C1/\" target=\"_blank\" aria-label=\"Find out more on the section 2020, an unprecedented year - New Window\">",
+      "<p class=\"ng-tns-c31-3\">Anticipating and integrating changes in our environment through regular dialogue with all of our stakeholders.</p>",
+      "<a onfocusanimation=\"\" class=\"btn-icon btn-icon__secondary btn-icon--sm animate-icon\" href=\"doc/article/15/\" target=\"_blank\" aria-label=\"Find out more on the section Listening to change - New Window\">",
+      "<p class=\"ng-tns-c31-4\">Adapting and mobilising to support our customers on a daily basis in all their projects.</p>",
+      "<a onfocusanimation=\"\" class=\"btn-icon btn-icon__secondary btn-icon--sm animate-icon\" href=\"doc/article/28/\" target=\"_blank\" aria-label=\"Find out more on the section Mobilised to support you - New Window\">",
+      "<p class=\"ng-tns-c31-5\">Innovating to optimise our customer experience, accelerate the transition to a more sustainable economy and act ethically for a more inclusive and responsible society.</p>",
+      "<a onfocusanimation=\"\" class=\"btn-icon btn-icon__secondary btn-icon--sm animate-icon\" href=\"doc/article/46/\" target=\"_blank\" aria-label=\"Find out more on the section In action at your side - New Window\">",
+      "<p class=\"ng-tns-c31-6\">Governance to define and implement the Group’s strategic direction.</p>",
+      "<a onfocusanimation=\"\" class=\"btn-icon btn-icon__secondary btn-icon--sm animate-icon\" href=\"doc/article/64/\" target=\"_blank\" aria-label=\"Find out more on the section Committed for the long-term - New Window\">"
+    ]
+  },
+  {
+    "name": "duplicate-id-active",
+    "status": "error",
+    "description": "Ensures every id attribute value of active elements is unique",
+    "hints": [
+      "<a id=\"lp-nav\" target=\"_blank\" href=\"https://group.bnpparibas/en/\" aria-label=\"Go to the website of BNP Paribas - New Window\"><img src=\"assets/images/logo.png\" alt=\"Logo BNP PARIBAS\"></a>"
+    ]
+  }
+]
