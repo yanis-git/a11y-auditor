@@ -1,3 +1,5 @@
-<table class="table table-responsive">
-
-</table>
+<ul class="list-unstyled">
+    <li *ngFor="let rule of rules">
+        <a11y-criteria [rule]="rule"></a11y-criteria>
+    </li>
+</ul>

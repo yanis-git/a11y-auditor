@@ -1,1 +1,15 @@
-<p>criteria works!</p>
+<div class="card m-3">
+    <div class="card-body">
+        <details>
+            <summary>
+                <h5 class="card-title d-flex align-items-center">
+                    <span [ngClass]="{'bg-success': (rule | isRuleSucess), 'bg-error': (rule | isRuleError)}"  class="me-2"  role="status"  [attr.aria-label]="rule.status | lowercase"></span>
+                    {{ rule.name }}
+                </h5>
+            </summary>
+            <p class="card-text">
+                {{ rule.description }}
+            </p>
+        </details>
+    </div>
+</div>

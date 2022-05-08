@@ -5,7 +5,8 @@ import { RenderComponent } from './containers/render/render.component';
 import { CriteriaComponent } from './ui/criteria/criteria.component';
 import { ReportingComponent } from './reporting.component';
 import {HttpClientModule} from '@angular/common/http';
-import {ReportService} from '../api/report.service';
+import {RuleResultStore} from '../api/rule-result-store';
+import {isRuleErrorPipe, isRuleSucessPipe} from './pipes/ruleStatus.pipe';
 
 
 
@@ -14,13 +15,15 @@ import {ReportService} from '../api/report.service';
     FilterComponent,
     RenderComponent,
     CriteriaComponent,
-    ReportingComponent
+    ReportingComponent,
+    isRuleSucessPipe,
+    isRuleErrorPipe
   ],
   imports: [
     CommonModule,
     HttpClientModule
   ],
-  providers: [ReportService],
+  providers: [RuleResultStore],
   exports: [ReportingComponent]
 })
 export class ReportingModule { }
