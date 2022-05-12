@@ -7,7 +7,8 @@
     <h1>Test if all images with alt are consider as valid.</h1>
     <button> button without any aria</button>
     <button aria-label="control another element" aria-controls="hidden_element"> button with few valid aria element</button>
-    <button aria-readonly="true"> button with Invalid element</button>
+    <button aria-readonly="true" aria-none="dummy"> button with Invalid element</button>
+    <a aria-readonly="true" aria-none="dummy"></a>
     <div id="hidden_element" style="display: none">Hidden content toggleable</div>
 </main>
 <script>

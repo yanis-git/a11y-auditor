@@ -9,16 +9,16 @@ export class RuleResult {
         private status: RuleStatus,
     ) { }
 
-    static createRecommandation(name: string, description: string, hints: string[] = [], sources: string[] = [], status: RuleStatus): RuleResult {
-        return new RuleResult(name, description, hints, sources, status);
+    static createRecommandation(name: string, description: string, selectors: string[] = [], sources: string[] = [], status: RuleStatus): RuleResult {
+        return new RuleResult(name, description, selectors, sources, status);
     }
 
     static createSuccessRecommandation(name: string, description: string): RuleResult {
         return RuleResult.createRecommandation(name, description, [], [], RuleStatus.SUCCESS);
     }
 
-    static createErrorRecommandation(name: string, description: string, hints: string[] = [], sources: string[] = []): RuleResult {
-        return RuleResult.createRecommandation(name, description, hints, sources, RuleStatus.ERROR);
+    static createErrorRecommandation(name: string, description: string, selectors: string[] = [], sources: string[] = []): RuleResult {
+        return RuleResult.createRecommandation(name, description, selectors, sources, RuleStatus.ERROR);
     }
 
     isError(): boolean {
@@ -33,12 +33,12 @@ export class RuleResult {
         return this.selectors;
     }
 
-    toJson(): {name:string, status: string, description: string, hints: string[]} {
+    toJson(): {name:string, status: string, description: string, selectors: string[]} {
         return {
             name: this.name,
             status: this.status,
             description: this.description,
-            hints: this.selectors
+            selectors: this.selectors
         }
     }
 }
