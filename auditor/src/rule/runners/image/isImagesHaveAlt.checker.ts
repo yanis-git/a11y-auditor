@@ -7,12 +7,12 @@ const sources = [
     "https://www.w3.org/TR/WCAG20-TECHS/H37.html",
     "https://html.spec.whatwg.org/multipage/images.html#alt"
 ];
-
+declare var a11yAuditor: any;
 export async function isImagesHaveAltChecker(page: Page): Promise<RuleResult> {
     // parsing section
     const results = await page.evaluate(() => {
         const images = document.querySelectorAll<HTMLImageElement>('img:not([alt])');
-        return Array.from(images).map((image: HTMLImageElement) => image.getAttribute('src') ?? 'not-found');
+        return Array.from(images).map(image => a11yAuditor.helper.getCssPath(image))
     });
 
     // decision section

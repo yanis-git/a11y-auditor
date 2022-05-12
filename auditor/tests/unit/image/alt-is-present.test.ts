@@ -10,7 +10,7 @@ describe('is alt is present', () => {
             const result: RuleResult = await isImagesHaveAltChecker(page);
             expect(result.isError()).toBe(true);
             expect(result.isSuccess()).toBe(false);
-            expect(result.getHints()).toContain('no-alt-element.jpeg');
+            expect(result.getSelectors()).toContain('body > main > img');
         })();
     })
 
@@ -24,7 +24,7 @@ describe('is alt is present', () => {
             const result: RuleResult = await isImagesHaveAltChecker(page);
             expect(result.isSuccess()).toBe(true);
             expect(result.isError()).toBe(false);
-            expect(result.getHints()).toEqual([]);
+            expect(result.getSelectors()).toEqual([]);
         })();
     })
 })

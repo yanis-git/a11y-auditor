@@ -8,6 +8,7 @@ const sources = [
     "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-describedby",
 ];
 
+declare var a11yAuditor: any;
 export async function isDescribedByIsReferToValidElement(page: Page): Promise<RuleResult> {
     // parsing section
     const results = await page.evaluate(() => {
@@ -25,7 +26,7 @@ export async function isDescribedByIsReferToValidElement(page: Page): Promise<Ru
                     // todo must have a content from innerText or aria-label.
                 );
             })
-            .map(element => (element.getAttribute('aria-describedby') || element.getAttribute('aria-labelledby') as string));
+            .map(element => a11yAuditor.helper.getCssPath(element));
         });
 
     // decision section

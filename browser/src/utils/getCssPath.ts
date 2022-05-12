@@ -30,7 +30,7 @@ export function getDomElementPath(element: HTMLElement): string[] {
             // :nth-of-type is 1-indexed
             stack.unshift(`${nodeName}:nth-of-type(${sibIndex + 1})`);
         } else {
-            stack.unshift(nodeName);
+            stack.unshift(element.hasAttribute('role') ? `${nodeName}[role="${element.getAttribute('role')}"]` : nodeName);
         }
         element = element.parentNode as HTMLElement;
     }

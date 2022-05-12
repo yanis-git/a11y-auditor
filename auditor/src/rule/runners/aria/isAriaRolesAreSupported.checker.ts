@@ -8,13 +8,24 @@ const sources = [
     "https://www.w3.org/TR/wai-aria-1.1/#namefromcontent",
 ];
 
-export async function isAriaRolesAreSupported(ariaRoles: AriaRoles, page: Page): Promise<RuleResult> {
+
+interface ResultType {
+    role: string;
+    selector: string;
+    attributes: string[];
+}
+
+declare var a11yAuditor: any;
+
+export async function isAriaRolesAreSupported(ariaRoles: AriaRoles, page: Page): Promise<RuleResult[]> {
     // parsing section
-    const results: {role: string, attributes: string[]}[] = await page.evaluate((aria: AriaRoles) => {
+    const results: ResultType[] = await page.evaluate((aria: AriaRoles) => {
         const results = [];
         for (const [role, information] of Object.entries(aria)) {
             const elements = document.querySelectorAll(information.selector);
-            const invalidAttributeFound = new Set<string>();
+            const exceptions: {attributes: string[], selector: string}[] = [];
+            // For each matching elements we are looking for unexpected aria attributes.
+            // If we found one. then we store the selector.
             Array.from(elements).forEach(element => {
                 // @ts-ignore
                 const invalidArias = [...element.attributes]
@@ -23,28 +34,21 @@ export async function isAriaRolesAreSupported(ariaRoles: AriaRoles, page: Page):
                     .filter(attribute => /^aria-/.test(attribute) && !information.allowedArias.includes(attribute))
                 ;
                 if (invalidArias.length > 0) {
-                    // @ts-ignore
-                    invalidAttributeFound.add(...invalidArias);
+                    exceptions.push({attributes: invalidArias, selector: a11yAuditor.helper.getCssPath(element)});
                 }
-
             })
-
-            if (invalidAttributeFound.size > 0) {
-                results.push({
-                    role,
-                    attributes: (Array.from(invalidAttributeFound) as string[]),
-                });
-            }
+            results.push(...exceptions.map(exception => ({...exception, role})));
         }
 
         return results;
     }, ariaRoles);
-
     // decision section
+    const name = `${ Object.keys(ariaRoles).join(', ') } ${ ruleName }`;
     if (results.length === 0) {
-        return RuleResult.createSuccessRecommandation(`${ Object.keys(ariaRoles).join(', ') } ${ ruleName }`, ruleDescription);
-    } else {
-        const issues = results.map(result => `${result.role} : ${result.attributes.join(', ')} are founds and consider as invalid`);
-        return RuleResult.createErrorRecommandation(`${ Object.keys(ariaRoles).join(', ') } ${ ruleName }`, ruleDescription, issues, sources);
+        return [RuleResult.createSuccessRecommandation(name, ruleDescription)];
     }
+    return results.map(result => {
+        const description = `For role ${result.role} following aria "${result.attributes.join(', ')}" are not supported.`;
+        return RuleResult.createErrorRecommandation(name, description, [result.selector], sources);
+    });
 }

@@ -11,8 +11,8 @@ describe('Image alt and aria label', () => {
             const result: RuleResult = await isAltNotOverridden(page);
             expect(result.isError()).toBe(true);
             expect(result.isSuccess()).toBe(false);
-            expect(result.getHints()).toContain('multiple-type-of-alternative-element-labelledby.jpeg');
-            expect(result.getHints()).toContain('multiple-type-of-alternative-element-label.jpeg');
+            expect(result.getSelectors()).toContain('body > main > img');
+            expect(result.getSelectors()).toContain('body > main > img:nth-of-type(2)');
         })();
     })
 
@@ -26,7 +26,7 @@ describe('Image alt and aria label', () => {
             const result: RuleResult = await isAltNotOverridden(page);
             expect(result.isSuccess()).toBe(true);
             expect(result.isError()).toBe(false);
-            expect(result.getHints()).toEqual([]);
+            expect(result.getSelectors()).toEqual([]);
         })();
     })
 })

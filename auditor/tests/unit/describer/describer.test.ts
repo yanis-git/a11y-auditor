@@ -15,30 +15,34 @@ describe('describer', function () {
         })();
     });
 
-
     it('should return error when at least, one iframe present do not have title', () => {
         return (async () => {
             const page: Page = await getPageWithContent('tests/data/describer/test-describer-is-invalid.html');
             const result: RuleResult = await isDescribedByIsReferToValidElement(page);
-            expect(result.getHints().length).toBe(5);
+            expect(result.getSelectors().length).toBe(5);
             expect(result.isError()).toBe(true);
         })();
     });
 
     it('should return error when there is multiple attributes to describe element', () => {
+        const expectedResults = ['body > main > h1' , 'body > main > a', 'body > main > input'];
         return (async () => {
             const page: Page = await getPageWithContent('tests/data/describer/test-multiple-describer-invalid.html');
-            const result: RuleResult = await isLabelAreInConflict(page);
-            expect(result.getHints().length).toBe(3);
-            expect(result.isError()).toBe(true);
+            const results: RuleResult[] = await isLabelAreInConflict(page);
+            expect(results.length).toBe(expectedResults.length);
+            results.forEach((result, index) => {
+                expect(result.isError()).toBe(true);
+                expect(result.getSelectors()).toContain(expectedResults[index]);
+            })
         })();
     });
     it('should return success when there is single label or multiple with same value', () => {
         return (async () => {
             const page: Page = await getPageWithContent('tests/data/describer/test-multiple-describer-valid.html');
-            const result: RuleResult = await isLabelAreInConflict(page);
-            expect(result.getHints().length).toBe(0);
-            expect(result.isSuccess()).toBe(true);
+            const results: RuleResult[] = await isLabelAreInConflict(page);
+            expect(results.length).toBe(1);
+            expect(results[0].getSelectors().length).toBe(0);
+            expect(results[0].isSuccess()).toBe(true);
         })();
     });
 });
