@@ -1,6 +1,7 @@
 import {Page, Browser as PuppeteerBrowser} from 'puppeteer';
 import puppeteer from 'puppeteer-extra'
 import StealthPlugin from 'puppeteer-extra-plugin-stealth';
+import * as fs from 'fs';
 
 export class Browser {
     private browser!: PuppeteerBrowser;
@@ -16,7 +17,8 @@ export class Browser {
         }
         await this.page.setBypassCSP(true);
         await this.page.goto(url);
-        await this.page.addScriptTag({ path: this.getBrowserScript() });
+        await this.page.addScriptTag({ path: this.getBrowserScriptPath() });
+        // await this.page.evaluate(this.getBrowserScript());
         return this.page;
     }
 
@@ -39,7 +41,11 @@ export class Browser {
         return this.page !== undefined;
     }
 
-    private getBrowserScript() {
+    private getBrowserScript(): string {
+        return fs.readFileSync(this.browserDir + '/index.js', 'utf-8').toString();
+    }
+
+    private getBrowserScriptPath(): string {
         return require.resolve(this.browserDir + '/index.js');
     }
 }

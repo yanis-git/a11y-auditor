@@ -13,6 +13,7 @@ export async function isNavIsPresent(page: Page): Promise<RuleResult> {
         return Array
             .from(document.querySelectorAll<HTMLElement>('nav, [role=navigation]'))
             .filter(el => a11yAuditor.helper.isVisibleForScreenReader(el))
+            .map(el => a11yAuditor.helper.getCssPath(el))
         ;
     });
 

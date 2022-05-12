@@ -14,6 +14,7 @@ export async function isMainTagIsPresent(page: Page): Promise<RuleResult> {
         return Array
             .from(document.querySelectorAll<HTMLElement>('main, [role=main]'))
             .filter(el => a11yAuditor.helper.isVisibleForScreenReader(el))
+            .map(el => a11yAuditor.helper.getCssPath(el))
         ;
     });
 
