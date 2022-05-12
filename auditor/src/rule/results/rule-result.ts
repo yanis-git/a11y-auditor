@@ -4,7 +4,7 @@ export class RuleResult {
     constructor(
         private name: string,
         private description: string,
-        private hints: string[],
+        private selectors: string[],
         private sources: string[],
         private status: RuleStatus,
     ) { }
@@ -29,8 +29,8 @@ export class RuleResult {
         return this.status === RuleStatus.SUCCESS;
     }
 
-    getHints(): string[] {
-        return this.hints;
+    getSelectors(): string[] {
+        return this.selectors;
     }
 
     toJson(): {name:string, status: string, description: string, hints: string[]} {
@@ -38,7 +38,7 @@ export class RuleResult {
             name: this.name,
             status: this.status,
             description: this.description,
-            hints: this.hints
+            hints: this.selectors
         }
     }
 }

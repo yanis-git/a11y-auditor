@@ -14,7 +14,7 @@ describe('Navigation Landmark', function () {
                 const page: Page = await getPageWithContent(state.template);
                 const result: RuleResult = await isNavIsPresent(page);
                 expect(result.isSuccess()).toBe(true);
-                expect(result.getHints()).toEqual([]);
+                expect(result.getSelectors()).toEqual([]);
             })();
         });
 
@@ -23,7 +23,7 @@ describe('Navigation Landmark', function () {
             const page: Page = await getPageWithContent('tests/data/structural/navigation/test-no-nav-element-is-present.html');
             const result: RuleResult = await isNavIsPresent(page);
             expect(result.isError()).toBe(true);
-            expect(result.getHints()).toEqual(['Primary navigation landmark is missing']);
+            expect(result.getSelectors()).toEqual(['Primary navigation landmark is missing']);
         })();
     });
 });

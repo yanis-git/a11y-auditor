@@ -20,7 +20,7 @@ describe('describer', function () {
         return (async () => {
             const page: Page = await getPageWithContent('tests/data/describer/test-describer-is-invalid.html');
             const result: RuleResult = await isDescribedByIsReferToValidElement(page);
-            expect(result.getHints().length).toBe(5);
+            expect(result.getSelectors().length).toBe(5);
             expect(result.isError()).toBe(true);
         })();
     });
@@ -29,7 +29,7 @@ describe('describer', function () {
         return (async () => {
             const page: Page = await getPageWithContent('tests/data/describer/test-multiple-describer-invalid.html');
             const result: RuleResult = await isLabelAreInConflict(page);
-            expect(result.getHints().length).toBe(3);
+            expect(result.getSelectors().length).toBe(3);
             expect(result.isError()).toBe(true);
         })();
     });
@@ -37,7 +37,7 @@ describe('describer', function () {
         return (async () => {
             const page: Page = await getPageWithContent('tests/data/describer/test-multiple-describer-valid.html');
             const result: RuleResult = await isLabelAreInConflict(page);
-            expect(result.getHints().length).toBe(0);
+            expect(result.getSelectors().length).toBe(0);
             expect(result.isSuccess()).toBe(true);
         })();
     });
