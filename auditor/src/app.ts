@@ -56,7 +56,7 @@ export class App {
     }
 
     private writeResults(results: RuleResult[]) {
-        // console.table(results.map( result => result.toJson() ));
+        console.table(results.map( result => result.toJson() ));
         fs.writeFileSync(
             path.join(this.config.path.projectDir, '../results/results.json'),
             JSON.stringify(results.map( result => result.toJson()), null, 2)
