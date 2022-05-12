@@ -7,11 +7,12 @@ const sources = [
     "https://www.w3.org/TR/WCAG20-TECHS/H64.html"
 ];
 
+declare var a11yAuditor: any;
 export async function isFrameHaveTitle(page: Page): Promise<RuleResult> {
     // parsing section
     const results = await page.evaluate(() => {
-        const frames = document.querySelectorAll<HTMLImageElement>('frame:not([title]), iframe:not([title])');
-        return Array.from(frames).map((image: HTMLImageElement) => image.getAttribute('title') ?? 'not-found');
+        const frames = document.querySelectorAll<HTMLIFrameElement>('frame:not([title]), iframe:not([title])');
+        return Array.from(frames).map(frame => a11yAuditor.helper.getCssPath(frame));
     });
 
     // decision section

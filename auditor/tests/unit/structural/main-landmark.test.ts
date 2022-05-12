@@ -32,7 +32,8 @@ describe('Main Landmark', function () {
         return (async () => {
             const page: Page = await getPageWithContent('tests/data/structural/main/test-main-role-is-duplicated.html');
             const result: RuleResult = await isMainTagIsPresent(page);
-            expect(result.getSelectors()).toEqual(['Main landmark is present more than once. Use hidden attributes or remove tags']);
+            expect(result.getSelectors()).toContain('Main landmark is present more than once. Use hidden attributes or remove tags');
+            expect(result.getSelectors().length).toBe(3);
             expect(result.isError()).toBe(true);
         })();
     });

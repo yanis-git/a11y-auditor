@@ -22,7 +22,7 @@ export async function isMainTagIsPresent(page: Page): Promise<RuleResult> {
         return RuleResult.createErrorRecommandation(ruleName, ruleDescription, ['Main landmark is missing'], sources);
     }
     if (results.length > 1) {
-        return RuleResult.createErrorRecommandation(ruleName, ruleDescription, ['Main landmark is present more than once. Use hidden attributes or remove tags'], sources);
+        return RuleResult.createErrorRecommandation(ruleName, ruleDescription, ['Main landmark is present more than once. Use hidden attributes or remove tags', ...results], sources);
     }
     return RuleResult.createSuccessRecommandation(ruleName, ruleDescription);
 }

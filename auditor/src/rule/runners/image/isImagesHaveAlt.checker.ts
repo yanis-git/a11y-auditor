@@ -12,7 +12,7 @@ export async function isImagesHaveAltChecker(page: Page): Promise<RuleResult> {
     // parsing section
     const results = await page.evaluate(() => {
         const images = document.querySelectorAll<HTMLImageElement>('img:not([alt])');
-        return Array.from(images).map((image: HTMLImageElement) => a11yAuditor.helper.getCssPath(image))
+        return Array.from(images).map(image => a11yAuditor.helper.getCssPath(image))
     });
 
     // decision section
