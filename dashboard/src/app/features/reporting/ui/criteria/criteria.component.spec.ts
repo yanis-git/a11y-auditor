@@ -1,6 +1,8 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { CriteriaComponent } from './criteria.component';
+import {CriteriaComponent} from './criteria.component';
+import {isRuleErrorPipe, isRuleSucessPipe} from '../../pipes/ruleStatus.pipe';
+import {RuleStatus} from '../../../api/constant';
 
 describe('CriteriaComponent', () => {
   let component: CriteriaComponent;
@@ -8,7 +10,11 @@ describe('CriteriaComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CriteriaComponent ]
+      declarations: [
+        CriteriaComponent,
+        isRuleSucessPipe,
+        isRuleErrorPipe
+      ]
     })
     .compileComponents();
   });
@@ -16,6 +22,13 @@ describe('CriteriaComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(CriteriaComponent);
     component = fixture.componentInstance;
+    component.rule = {
+      name: 'hello',
+      description: 'hello',
+      hints: [],
+      sources: [],
+      status: RuleStatus.SUCCESS,
+    };
     fixture.detectChanges();
   });
 

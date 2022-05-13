@@ -18,13 +18,10 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
-      - name: Build browser application
-        run: npm run build:browser
+      - name: Build all applications
+        run: npx nx affected --target=test --parallel=3
 
-      - name: Build auditor application
-        run: npm run build:auditor
-
-      - name: Test application
-        run: npm run test
+      - name: Test all applications
+        run: npx nx affected --target=build --parallel=3

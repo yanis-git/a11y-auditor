@@ -16,14 +16,14 @@ npm run build
 
 **How to use ?**
 ```
-node dist/auditor/index.js --url=http://localhost:3000
+node dist/auditor/main.js --url=http://localhost:3000
 ```
 
 **How to quickly test ?**
 ```
 # it start a python server to mount tests folder.
 npm run serve
-node dist/auditor/index.js --url=http://\[::\]:8000/data/structural/main/test-main-tag-is-present.html
+node dist/auditor/main.js --url=http://\[::\]:8000/data/structural/main/test-main-tag-is-present.html
 ```
 
 ---
@@ -49,7 +49,7 @@ On this project i'am using
 - [x] Add github Action to run automatic testing suite.
 - [x] Create Helper Browser method.
 - [x] Move to nx based setup.
-- [ ] Fix issue with typescript `type.d.ts` loading from browser compilation.
+- [x] Fix issue with typescript `type.d.ts` loading from browser compilation.
 - [ ] Create a v0 dashboard to list result in convenient way.
 - [ ] Having a identifier rule per criteria.
 - [ ] Create Documentation folders to details rules.

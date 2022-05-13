@@ -6,7 +6,7 @@
     "lint": "tslint 'src/**/*.ts'",
     "build": "webpack --config config/webpack.config.js",
     "watch": "webpack --config config/webpack.config.js --watch",
-    "test": "jest --runInBand --detectOpenHandles --forceExit"
+    "test": "true"
   },
   "repository": {
     "type": "git",
