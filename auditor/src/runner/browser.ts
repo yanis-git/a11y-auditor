@@ -17,8 +17,8 @@ export class Browser {
         }
         await this.page.setBypassCSP(true);
         await this.page.goto(url);
-        await this.page.addScriptTag({ path: this.getBrowserScriptPath() });
-        // await this.page.evaluate(this.getBrowserScript());
+        // await this.page.addScriptTag({ path: this.getBrowserScriptPath() });
+        await this.page.evaluate(this.getBrowserScript());
         return this.page;
     }
 
