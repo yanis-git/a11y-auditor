@@ -1,7 +1,7 @@
 {
   "projectType": "application",
-  "root": "apps/dashboard",
-  "sourceRoot": "apps/dashboard/src",
+  "root": "dashboard",
+  "sourceRoot": "dashboard/src",
   "prefix": "a11y",
   "schematics": {
     "@schematics/angular:component": {
@@ -16,18 +16,18 @@
         "{options.outputPath}"
       ],
       "options": {
-        "outputPath": "dist/apps/dashboard",
-        "index": "apps/dashboard/src/index.html",
-        "main": "apps/dashboard/src/main.ts",
-        "polyfills": "apps/dashboard/src/polyfills.ts",
-        "tsConfig": "apps/dashboard/tsconfig.app.json",
+        "outputPath": "dist/dashboard",
+        "index": "dashboard/src/index.html",
+        "main": "dashboard/src/main.ts",
+        "polyfills": "dashboard/src/polyfills.ts",
+        "tsConfig": "dashboard/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
-          "apps/dashboard/src/favicon.ico",
-          "apps/dashboard/src/assets"
+          "dashboard/src/favicon.ico",
+          "dashboard/src/assets"
         ],
         "styles": [
-          "apps/dashboard/src/styles.scss"
+          "dashboard/src/styles.scss"
         ],
         "scripts": []
       },
@@ -47,8 +47,8 @@
           ],
           "fileReplacements": [
             {
-              "replace": "apps/dashboard/src/environments/environment.ts",
-              "with": "apps/dashboard/src/environments/environment.prod.ts"
+              "replace": "dashboard/src/environments/environment.ts",
+              "with": "dashboard/src/environments/environment.prod.ts"
             }
           ],
           "outputHashing": "all"
@@ -98,18 +98,18 @@
       "executor": "@nrwl/linter:eslint",
       "options": {
         "lintFilePatterns": [
-          "apps/dashboard/**/*.ts",
-          "apps/dashboard/**/*.html"
+          "dashboard/**/*.ts",
+          "dashboard/**/*.html"
         ]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
       "outputs": [
-        "coverage/apps/dashboard"
+        "coverage/dashboard"
       ],
       "options": {
-        "jestConfig": "apps/dashboard/jest.config.ts",
+        "jestConfig": "dashboard/jest.config.ts",
         "passWithNoTests": true
       }
     }

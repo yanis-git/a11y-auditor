@@ -20,7 +20,7 @@ export async function getPageWithContent(contentPath: string): Promise<Page> {
     });
 
     await page.goto('http://localhost');
-    await page.addScriptTag({path: path.resolve(__dirname, '../../../', 'dist/browser/index.js')});
+    await page.evaluate(fs.readFileSync(path.resolve(__dirname, '../../../', 'dist/browser/index.js'), 'utf8'));
 
     return page;
 }

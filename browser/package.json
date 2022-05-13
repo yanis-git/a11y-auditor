@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Chromeless bot to check accessibility criteria",
   "scripts": {
-    "lint": "tslint -c tslint.json 'src/**/*.ts'",
+    "lint": "tslint 'src/**/*.ts'",
     "build": "webpack --config config/webpack.config.js",
     "watch": "webpack --config config/webpack.config.js --watch",
     "test": "jest --runInBand --detectOpenHandles --forceExit"
