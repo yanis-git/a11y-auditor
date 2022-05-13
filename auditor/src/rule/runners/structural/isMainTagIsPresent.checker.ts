@@ -7,7 +7,9 @@ const sources = [
     "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/main_role"
 ];
 
-declare var a11yAuditor: any;
+import {helper} from '../../../../../dist/browser';
+declare var a11yAuditor: {helper: typeof helper};
+
 export async function isMainTagIsPresent(page: Page): Promise<RuleResult> {
     // parsing section
     const results = await page.evaluate(() => {

@@ -6,7 +6,8 @@ const ruleDescription = 'primary navigation is required, it help a lot to quickl
 const sources = [
     "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/navigation_role"
 ];
-declare var a11yAuditor: any;
+import {helper} from '../../../../../dist/browser';
+declare var a11yAuditor: {helper: typeof helper};
 export async function isNavIsPresent(page: Page): Promise<RuleResult> {
     // parsing section
     const results = await page.evaluate(() => {

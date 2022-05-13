@@ -15,14 +15,14 @@ interface ResultType {
     attributes: string[];
 }
 
-declare var a11yAuditor: any;
-
+import {helper} from '../../../../../dist/browser';
+declare var a11yAuditor: {helper: typeof helper};
 export async function isAriaRolesAreSupported(ariaRoles: AriaRoles, page: Page): Promise<RuleResult[]> {
     // parsing section
     const results: ResultType[] = await page.evaluate((aria: AriaRoles) => {
         const results = [];
         for (const [role, information] of Object.entries(aria)) {
-            const elements = document.querySelectorAll(information.selector);
+            const elements = document.querySelectorAll<HTMLElement>(information.selector);
             const exceptions: {attributes: string[], selector: string}[] = [];
             // For each matching elements we are looking for unexpected aria attributes.
             // If we found one. then we store the selector.
