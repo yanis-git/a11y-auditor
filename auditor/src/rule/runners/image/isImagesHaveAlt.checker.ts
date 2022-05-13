@@ -7,7 +7,8 @@ const sources = [
     "https://www.w3.org/TR/WCAG20-TECHS/H37.html",
     "https://html.spec.whatwg.org/multipage/images.html#alt"
 ];
-declare var a11yAuditor: any;
+import {helper} from '../../../../../dist/browser';
+declare var a11yAuditor: {helper: typeof helper};
 export async function isImagesHaveAltChecker(page: Page): Promise<RuleResult> {
     // parsing section
     const results = await page.evaluate(() => {

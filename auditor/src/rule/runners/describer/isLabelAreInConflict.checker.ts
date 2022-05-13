@@ -14,7 +14,8 @@ interface ResultType {
 }
 const supportedDescribers = ['aria-labelledby', 'aria-describedby', 'aria-label', 'aria-title', 'aria-placeholder', 'aria-description', 'title', 'placeholder'];
 
-declare var a11yAuditor: any;
+import {helper} from '../../../../../dist/browser';
+declare var a11yAuditor: {helper: typeof helper};
 export async function isLabelAreInConflict(page: Page): Promise<RuleResult[]> {
     // parsing section
     const results = await page.evaluate((supportedDescribers: string[]) => {
@@ -32,7 +33,7 @@ export async function isLabelAreInConflict(page: Page): Promise<RuleResult[]> {
                         if (label1 && label2 && label1 !== label2) {
                             results.push({
                                 issue: `${selector1}="${label1}" and ${selector2}="${label2}"`,
-                                selector: a11yAuditor.helper.getCssPath(element)
+                                selector: a11yAuditor.helper.getCssPath(element as HTMLElement),
                             });
                         }
                     });
