@@ -6,10 +6,10 @@ import {RuleSet} from '../api/constant';
 @Component({
   selector: 'a11y-reporting',
   template: `
-      <a11y-intro>
-        <a11y-filter></a11y-filter>
-      </a11y-intro>
+    <main>
+      <a11y-intro><a11y-filter></a11y-filter></a11y-intro>
       <a11y-render [rules]="(sucess$ | async) ?? []"></a11y-render>
+    </main>
   `,
   changeDetection:ChangeDetectionStrategy.OnPush
 })
@@ -20,6 +20,5 @@ export class ReportingComponent {
   constructor(private _reportService: RuleResultStore) {
     this.errors$ = this._reportService.errors$;
     this.sucess$ = this._reportService.sucess$;
-
   }
 }

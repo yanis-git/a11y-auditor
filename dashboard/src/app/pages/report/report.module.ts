@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import {RouterModule, Routes} from '@angular/router';
 import {ReportingModule} from '../../features/reporting/reporting.module';
 import {ReportPageComponent} from './report-page.component';
+import {FooterModule} from '../../features/footer/footer.module';
 
 const routes: Routes = [
   {path: '', component: ReportPageComponent}
@@ -13,7 +14,8 @@ const routes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    ReportingModule
+    ReportingModule,
+    FooterModule
   ]
 })
 export class ReportModule { }
