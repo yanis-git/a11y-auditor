@@ -7,6 +7,7 @@ import { ReportingComponent } from './reporting.component';
 import {HttpClientModule} from '@angular/common/http';
 import {RuleResultStore} from '../api/rule-result-store';
 import {isRuleErrorPipe, isRuleSucessPipe} from './pipes/ruleStatus.pipe';
+import { IntroComponent } from './ui/intro/intro.component';
 
 
 
@@ -17,7 +18,8 @@ import {isRuleErrorPipe, isRuleSucessPipe} from './pipes/ruleStatus.pipe';
     CriteriaComponent,
     ReportingComponent,
     isRuleSucessPipe,
-    isRuleErrorPipe
+    isRuleErrorPipe,
+    IntroComponent
   ],
   imports: [
     CommonModule,

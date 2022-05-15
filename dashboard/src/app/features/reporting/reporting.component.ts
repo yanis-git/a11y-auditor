@@ -6,10 +6,10 @@ import {RuleSet} from '../api/constant';
 @Component({
   selector: 'a11y-reporting',
   template: `
-    <div class="container">
-      <a11y-filter></a11y-filter>
+      <a11y-intro>
+        <a11y-filter></a11y-filter>
+      </a11y-intro>
       <a11y-render [rules]="(sucess$ | async) ?? []"></a11y-render>
-    </div>
   `,
   changeDetection:ChangeDetectionStrategy.OnPush
 })
