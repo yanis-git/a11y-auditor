@@ -1,9 +1,9 @@
 {
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
-  "root": "dashboard",
   "sourceRoot": "dashboard/src",
   "prefix": "a11y",
-  "schematics": {
+  "generators": {
     "@schematics/angular:component": {
       "style": "scss",
       "changeDetection": "OnPush"

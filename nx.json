@@ -61,5 +61,6 @@
   },
   "cli": {
     "defaultCollection": "@nrwl/angular"
-  }
+  },
+  "$schema": "./node_modules/nx/schemas/nx-schema.json"
 }
