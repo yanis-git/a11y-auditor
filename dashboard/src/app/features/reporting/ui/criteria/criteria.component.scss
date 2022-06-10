@@ -13,7 +13,7 @@ span[role=status] {
 .card-body {
     box-shadow: $box-shadow-sm;
     border-radius: 10px;
-    background: #f8f9fa;
+    background: #fff;
     &[open] {
         box-shadow: $box-shadow-lg;
     }
@@ -23,27 +23,35 @@ span[role=status] {
             &::-webkit-details-marker, &::marker {
                 display: none;
             }
+        }
+      .arrow {
+        content: "";
+        background: #fff;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        right: 28px;
+        transform: translateY(50%);
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        span {
+          width: 8px;
+          height: 8px;
+          border-bottom: 2px solid currentColor;
+          border-right: 2px solid currentColor;
+          display: block;
+          transform: rotate(45deg);
+          animation: transform ease-in-out 200ms;
+        }
+      }
+      &[open] {
             .arrow {
-                content: "";
-                background: #fff;
-                border: 1px solid black;
-                display: flex;
-                justify-content: space-around;
-             align-items: center;
-                position: absolute;
-                top: 0;
-                right: 28px;
-                transform: translateY(50%);
-                width: 28px;
-                height: 28px;
-                border-radius: 50%;
                 span {
-                    width: 8px;
-                    height: 8px;
-                    border-bottom: 2px solid currentColor;
-                    border-right: 2px solid currentColor;
-                    display: block;
-                    transform: rotate(45deg);
+                    transform: rotate(225deg);
                 }
             }
         }
