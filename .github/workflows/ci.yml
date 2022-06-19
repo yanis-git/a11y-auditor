@@ -18,7 +18,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Install dependencies
-        run: npm ci
+        run: yarn
 
       - name: Build all applications
         run: npx nx affected --target=test --parallel=3
