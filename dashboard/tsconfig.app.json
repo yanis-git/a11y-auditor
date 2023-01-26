@@ -3,7 +3,8 @@
   "compilerOptions": {
     "outDir": "../../dist/out-tsc",
     "types": [],
-    "target": "ES2017"
+    "target": "ES2022",
+    "useDefineForClassFields": false
   },
   "files": [
     "src/main.ts",
@@ -14,6 +15,7 @@
   ],
   "exclude": [
     "**/*.test.ts",
-    "**/*.spec.ts"
+    "**/*.spec.ts",
+    "jest.config.ts"
   ]
 }

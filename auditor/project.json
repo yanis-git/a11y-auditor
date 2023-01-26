@@ -1,10 +1,11 @@
 {
+  "name": "auditor",
   "$schema": "../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "auditor/src",
   "projectType": "application",
   "targets": {
     "build": {
-      "executor": "@nrwl/node:webpack",
+      "executor": "@nrwl/webpack:webpack",
       "outputs": [
         "{options.outputPath}"
       ],
@@ -12,7 +13,9 @@
         "outputPath": "dist/auditor",
         "main": "auditor/src/index.ts",
         "tsConfig": "auditor/tsconfig.json",
-        "assets": []
+        "assets": [],
+        "target": "node",
+        "compiler": "tsc"
       },
       "configurations": {
         "production": {
@@ -42,10 +45,10 @@
     "test": {
       "executor": "@nrwl/jest:jest",
       "outputs": [
-        "coverage/auditor"
+        "{workspaceRoot}/coverage/auditor"
       ],
       "options": {
-        "jestConfig": "auditor/jest.config.js",
+        "jestConfig": "auditor/jest.config.ts",
         "passWithNoTests": true
       }
     }
