@@ -10,8 +10,8 @@ Based on set of rules available on `src/rule/runners`.
 ```
 git clone https://github.com/yanis-git/a11y-auditor 
 cd a11y-auditor
-npm install
-npm run build
+yarn
+yarn build
 ```
 
 **How to use ?**
