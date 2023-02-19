@@ -1,8 +1,8 @@
 # A11y - Accessibility headless checker
 
-### Welcome to **A11y-Auditor**, the accessibility headless checker
+### Welcome to A11Y-Auditor, the accessibility headless checker
 
-**A11y-Auditor** is an open-source project that aims to make the web a more accessible place for all users, regardless of their abilities. 
+**A11Y-Auditor** is an open-source project that aims to make the web a more accessible place for all users, regardless of their abilities. 
 
 With A11y, you can easily audit your website for accessibility issues and ensure that it meets the WCAG (Web Content Accessibility Guidelines) standards. 
 As it is a headless tool, which means it can be integrated into your existing workflows and testing frameworks seamlessly. 
@@ -10,6 +10,20 @@ As it is a headless tool, which means it can be integrated into your existing wo
 Whether you're a developer, designer, or accessibility advocate, A11y is the perfect tool to help you create more inclusive and accessible web experiences. 
 
 Let's dive into the world of accessibility and make the web a more inclusive place together.
+
+### Disclaimer and Limitation
+
+As the maintainer of this open source project, I want to be transparent about a potential limitation of A11Y-Auditor. While A11Y-Auditor is a powerful tool that can detect many accessibility issues, it is not perfect, and there may be false negatives.
+
+False negatives can occur when A11Y-Auditor fails to identify an accessibility issue that exists on a web page. This can happen for a variety of reasons, such as:
+
+ - Present tool is not able to detect an issue that requires manual testing or human interpretation.
+ - Present tool relies on heuristics to detect certain accessibility issues, and these heuristics may not be accurate in all cases.
+ - Present tool is limited by the accessibility testing library it uses, which may not cover all types of accessibility issues.
+
+We strive to make this tool as accurate as possible, but we recognize that there may be false negatives. Therefore, we recommend using this tool as part of a comprehensive accessibility testing process that includes manual testing and user testing.
+
+If you do encounter a false negative or any other issues with A11y, please let us know by [creating an issue on our GitHub repository](https://github.com/yanis-git/a11y-auditor/issues/new). We are always open to feedback and are committed to making this tool as helpful and accurate as possible for the entire community.
 
 All Audits check is based on set of rules available on `src/rule/runners`. 
 
