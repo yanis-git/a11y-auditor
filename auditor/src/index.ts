@@ -1,8 +1,7 @@
 import {App} from './app';
-import argv from './utils/argv';
-
+import {args} from './utils/argv';
 
 (new App({
-    isDebug: false,
-    url: argv.url || 'http://localhost:8080',
+    isDebug: args.debug,
+    url: args.url || 'http://localhost:8080',
 })).run();

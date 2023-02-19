@@ -1,5 +1,4 @@
-// @ts-ignore
-import {Page, Request} from 'puppeteer';
+import {Page} from 'puppeteer';
 import {getPageWithContent} from '../../helper/page-result.mock';
 import {RuleResult} from '../../../src/rule/results/rule-result';
 import {isAltNotOverridden} from '../../../src/rule/runners/image/isAltIsNotOverided.checker';

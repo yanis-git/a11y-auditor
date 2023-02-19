@@ -1,5 +1,6 @@
 import {Page} from 'puppeteer';
 import {RuleResult} from '../../results/rule-result';
+import {helper} from '../../../../../dist/browser';
 
 const ruleName = 'Image have alt attribute override by something else ?';
 const ruleDescription = 'Images tag must use alt attribute, not any other way such as aria-label, title etc';
@@ -7,7 +8,7 @@ const sources = [
     "https://fae.disability.illinois.edu/rulesets/IMAGE_1/#:~:text=The%20alt%20attribute%20is%20the,with%20role%3D%22img%22%20."
 ];
 
-declare var a11yAuditor: any;
+declare let a11yAuditor: {helper: typeof helper};
 export async function isAltNotOverridden(page: Page): Promise<RuleResult> {
     // parsing section
     const results = await page.evaluate(() => {

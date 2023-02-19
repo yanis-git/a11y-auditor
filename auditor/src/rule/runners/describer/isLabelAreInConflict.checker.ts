@@ -15,7 +15,7 @@ interface ResultType {
 const supportedDescribers = ['aria-labelledby', 'aria-describedby', 'aria-label', 'aria-title', 'aria-placeholder', 'aria-description', 'title', 'placeholder'];
 
 import {helper} from '../../../../../dist/browser';
-declare var a11yAuditor: {helper: typeof helper};
+declare let a11yAuditor: {helper: typeof helper};
 export async function isLabelAreInConflict(page: Page): Promise<RuleResult[]> {
     // parsing section
     const results = await page.evaluate((supportedDescribers: string[]) => {

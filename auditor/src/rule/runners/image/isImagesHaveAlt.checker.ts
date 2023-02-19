@@ -1,5 +1,6 @@
 import {Page} from 'puppeteer';
 import {RuleResult} from '../../results/rule-result';
+import {helper} from '../../../../../dist/browser';
 
 const ruleName = 'Image have alt attribute ?';
 const ruleDescription = 'Images should have alt attribute, it can be empty or contain text';
@@ -7,8 +8,7 @@ const sources = [
     "https://www.w3.org/TR/WCAG20-TECHS/H37.html",
     "https://html.spec.whatwg.org/multipage/images.html#alt"
 ];
-import {helper} from '../../../../../dist/browser';
-declare var a11yAuditor: {helper: typeof helper};
+declare let a11yAuditor: {helper: typeof helper};
 export async function isImagesHaveAltChecker(page: Page): Promise<RuleResult> {
     // parsing section
     const results = await page.evaluate(() => {

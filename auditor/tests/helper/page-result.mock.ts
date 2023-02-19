@@ -1,5 +1,4 @@
-// @ts-ignore
-import puppeteer, {Page, Request} from 'puppeteer';
+import {Page} from 'puppeteer';
 import * as fs from 'fs';
 import * as path from 'path';
 
@@ -12,7 +11,7 @@ export async function getPageWithContent(contentPath: string): Promise<Page> {
 
     const page = await browser.newPage();
     await page.setRequestInterception(true);
-    page.on('request', (request: Request) => {
+    page.on('request', request => {
         request.respond({
             body: fs.readFileSync(file, 'utf8'),
         })

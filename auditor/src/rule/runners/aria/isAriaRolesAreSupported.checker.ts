@@ -16,7 +16,7 @@ interface ResultType {
 }
 
 import {helper} from '../../../../../dist/browser';
-declare var a11yAuditor: {helper: typeof helper};
+declare let a11yAuditor: {helper: typeof helper};
 export async function isAriaRolesAreSupported(ariaRoles: AriaRoles, page: Page): Promise<RuleResult[]> {
     // parsing section
     const results: ResultType[] = await page.evaluate((aria: AriaRoles) => {
@@ -27,7 +27,6 @@ export async function isAriaRolesAreSupported(ariaRoles: AriaRoles, page: Page):
             // For each matching elements we are looking for unexpected aria attributes.
             // If we found one. then we store the selector.
             Array.from(elements).forEach(element => {
-                // @ts-ignore
                 const invalidArias = [...element.attributes]
                     .map(e => e.nodeName)
                     // we want to match any aria-* attribute not on the allowed list.

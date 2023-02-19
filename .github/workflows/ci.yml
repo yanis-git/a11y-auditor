@@ -20,6 +20,9 @@ jobs:
       - name: Install dependencies
         run: yarn
 
+      - name: Lint all applications
+        run: npx nx affected --target=lint --parallel=3
+
       - name: Build all applications
         run: npx nx affected --target=test --parallel=3
 

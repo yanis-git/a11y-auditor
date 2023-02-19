@@ -6,7 +6,7 @@ export enum RuleStatus {
     SUCCESS = 'success',
     ERROR = 'error',
     WARNING = 'warning',
-};
+}
 
 
 export interface RuleSet {

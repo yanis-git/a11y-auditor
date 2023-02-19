@@ -9,7 +9,7 @@ const sources = [
 ];
 
 import {helper} from '../../../../../dist/browser';
-declare var a11yAuditor: {helper: typeof helper};
+declare let a11yAuditor: {helper: typeof helper};
 export async function isDescribedByIsReferToValidElement(page: Page): Promise<RuleResult> {
     // parsing section
     const results = await page.evaluate(() => {

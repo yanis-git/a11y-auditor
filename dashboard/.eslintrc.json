@@ -1,6 +1,6 @@
 {
   "extends": [
-    "../../.eslintrc.json"
+    "../.eslintrc.json"
   ],
   "ignorePatterns": [
     "!**/*"
@@ -19,7 +19,7 @@
           "error",
           {
             "type": "attribute",
-            "prefix": "a11yAuditor",
+            "prefix": "a11y",
             "style": "camelCase"
           }
         ],
@@ -27,7 +27,7 @@
           "error",
           {
             "type": "element",
-            "prefix": "a11y-auditor",
+            "prefix": "a11y",
             "style": "kebab-case"
           }
         ]

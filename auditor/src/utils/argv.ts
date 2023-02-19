@@ -1,16 +1,17 @@
-/**
- * helper to get object from argv.
- * https://stackoverflow.com/a/4351548/9483405
- */
-export default ((): any => {
-    const arg = {};
-    process.argv.slice(2).map( (element) => {
-        const matches = element.match( '--([a-zA-Z0-9]+)=(.*)');
-        if ( matches ){
-            // @ts-ignore
-            arg[matches[1]] = matches[2]
-                .replace(/^['"]/, '').replace(/['"]$/, '');
-        }
-    });
-    return arg;
-})();
+import {parse} from "ts-command-line-args";
+
+interface AuditorCliArguments {
+    url: string;
+    debug: boolean;
+    help?: boolean;
+
+}
+
+export const args = parse<AuditorCliArguments>({
+    url: { type: String, alias: 'u' },
+    debug: { type: Boolean, alias: 'd' },
+    help: { type: Boolean, optional: true, alias: 'h', description: 'Prints this usage guide' },
+}, {
+    helpArg: 'help',
+    headerContentSections: [{ header: 'A11Y Auditor Tools', content: 'CLI A11Y Auditor' }]
+})
