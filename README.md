@@ -1,11 +1,19 @@
-A11y - Accessibility headless checker
-==
+# A11y - Accessibility headless checker
 
-The a11y headless checker is a great tool for quickly checking the accessibility of your website. It's easy to use and can help you identify any potential issues that need to be addressed.
+### Welcome to **A11y-Auditor**, the accessibility headless checker
 
-Based on set of rules available on `src/rule/runners`. 
+**A11y-Auditor** is an open-source project that aims to make the web a more accessible place for all users, regardless of their abilities. 
 
-**How to start ?**
+With A11y, you can easily audit your website for accessibility issues and ensure that it meets the WCAG (Web Content Accessibility Guidelines) standards. 
+As it is a headless tool, which means it can be integrated into your existing workflows and testing frameworks seamlessly. 
+
+Whether you're a developer, designer, or accessibility advocate, A11y is the perfect tool to help you create more inclusive and accessible web experiences. 
+
+Let's dive into the world of accessibility and make the web a more inclusive place together.
+
+All Audits check is based on set of rules available on `src/rule/runners`. 
+
+#### How to start ?
 
 ```
 git clone https://github.com/yanis-git/a11y-auditor 
@@ -14,21 +22,23 @@ yarn
 yarn build
 ```
 
-**How to use ?**
+#### How to use ?
 ```
-node dist/auditor/main.js --url=http://localhost:3000
+yarn auditor --url=https://github.com/yanis-git/a11y-auditor
+# OR 
+node dist/auditor/main.js --url=https://github.com/yanis-git/a11y-auditor
 ```
 
-**How to quickly test ?**
+#### How to quickly test ?
 ```
 # it start a python server to mount tests folder.
 npm run serve
-node dist/auditor/main.js --url=http://\[::\]:8000/data/structural/main/test-main-tag-is-present.html
+yarn auditor --url=http://\[::\]:8000/data/structural/main/test-main-tag-is-present.html
 ```
 
 ---
 
-**What technology is used ?**
+#### What technology is used ?
 
 On this project i'am using 
  - [node.js](https://nodejs.org/) to build and run the app.
@@ -39,7 +49,7 @@ On this project i'am using
 
 ---
 
-**Pending todo list:** 
+#### Pending todo list:
 
 - [x] Create setup
 - [x] Create Folder structure
@@ -56,6 +66,6 @@ On this project i'am using
 - [ ] Includes a way to provide a list of rules to run. 
 - [ ] Create a way to provide a list of rules to ignore. 
 
-**Thanking:**
+#### Thanking
 
  - [@EmmanuelDemey](https://github.com/EmmanuelDemey/audit) who inspired me to create this tool.

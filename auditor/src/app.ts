@@ -17,7 +17,7 @@ export interface AppConfig {
 
 const defaultConfig = {
     isDebug: false,
-    url: "http://127.0.0.1:8000/dummy",
+    url: "https://github.com/yanis-git",
     path: {
         projectDir: path.join(__dirname, '..'),
         browserDir: path.join(__dirname, '../browser'),

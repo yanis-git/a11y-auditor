@@ -4,6 +4,28 @@
   "sourceRoot": "auditor/src",
   "projectType": "application",
   "targets": {
+    "watch": {
+      "executor": "@nrwl/webpack:webpack",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "dist/auditor",
+        "main": "auditor/src/index.ts",
+        "tsConfig": "auditor/tsconfig.json",
+        "assets": [],
+        "target": "node",
+        "compiler": "tsc",
+        "watch": true
+      },
+      "configurations": {
+        "production": {
+          "optimization": true,
+          "extractLicenses": true,
+          "inspect": false
+        }
+      }
+    },
     "build": {
       "executor": "@nrwl/webpack:webpack",
       "outputs": [

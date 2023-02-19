@@ -10,7 +10,6 @@ export async function getPageWithContent(contentPath: string): Promise<Page> {
         throw new Error(`File ${file} does not exist`);
     }
 
-    // const browser = await puppeteer.launch();
     const page = await browser.newPage();
     await page.setRequestInterception(true);
     page.on('request', (request: Request) => {
@@ -22,5 +21,6 @@ export async function getPageWithContent(contentPath: string): Promise<Page> {
     await page.goto('http://localhost');
     await page.evaluate(fs.readFileSync(path.resolve(__dirname, '../../../', 'dist/browser/index.js'), 'utf8'));
 
-    return page;
+    // todo remove me when @types/puppeter will be up to date.
+    return page as unknown as Page;
 }

@@ -1,4 +1,4 @@
-import {Page, Browser as PuppeteerBrowser} from 'puppeteer';
+import {executablePath, Page, Browser as PuppeteerBrowser} from 'puppeteer';
 import puppeteer from 'puppeteer-extra'
 import StealthPlugin from 'puppeteer-extra-plugin-stealth';
 import * as fs from 'fs';
@@ -30,6 +30,7 @@ export class Browser {
                 args: [
                     '--window-size=1920,1080',
                 ],
+                executablePath: executablePath()
             });
         this.page = await this.browser.newPage();
     }
