@@ -1,4 +1,5 @@
 # A11y - Accessibility headless checker
+[![Actions Status](https://github.com/yanis-git/a11y-auditor/workflows/Test/badge.svg)](https://github.com/yanis-git/a11y-auditor/actions)
 
 ### Welcome to A11Y-Auditor, the accessibility headless checker
 
