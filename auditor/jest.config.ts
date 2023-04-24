@@ -8,7 +8,6 @@ module.exports = {
   preset: 'jest-puppeteer',
   clearMocks: true,
   collectCoverage: true,
-  coverageDirectory: "coverage",
   coverageProvider: "v8",
   // A map from regular expressions to paths to transformers
     transform: {
