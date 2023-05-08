@@ -1,27 +1,27 @@
-const path = require('path');
+const path = require("path");
 module.exports = {
   mode: "production",
-  entry: './src/index.ts',
+  entry: "./src/index.ts",
   output: {
     library: {
-      name: 'a11yAuditor',
-      type: "window"
+      name: "a11yAuditor",
+      type: "window",
     },
-    path: path.resolve(__dirname, '../../dist/browser'),
-    filename: 'index.js'
+    path: path.resolve(__dirname, "../../dist/browser"),
+    filename: "index.js",
   },
-  resolve : {
-    extensions: ['.ts', '.js']
+  resolve: {
+    extensions: [".ts", ".js"],
   },
   module: {
     rules: [
       {
         test: /\.tsx?$/,
-        loader: 'ts-loader',
+        loader: "ts-loader",
         options: {
-          configFile: 'tsconfig.json'
-        }
-      }
-    ]
-  }
+          configFile: "tsconfig.json",
+        },
+      },
+    ],
+  },
 };

@@ -2,10 +2,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "target": "es2017",
-    "lib": [
-      "dom",
-      "ES2020"
-    ],
+    "lib": ["dom", "ES2020"],
     "module": "commonjs",
     "outDir": "../dist/auditor",
     "removeComments": true,
@@ -14,10 +11,6 @@
     "strict": true,
     "skipLibCheck": true
   },
-  "include": [
-    "src/**/*"
-  ],
-  "exclude": [
-    "jest.config.ts"
-  ]
+  "include": ["src/**/*"],
+  "exclude": ["jest.config.ts"]
 }

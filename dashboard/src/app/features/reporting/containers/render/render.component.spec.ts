@@ -1,17 +1,10 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { RenderComponent } from './render.component';
+import { RenderComponent } from "./render.component";
 
-describe('RenderComponent', () => {
+describe("RenderComponent", () => {
   let component: RenderComponent;
   let fixture: ComponentFixture<RenderComponent>;
-
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ RenderComponent ]
-    })
-    .compileComponents();
-  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(RenderComponent);
@@ -19,7 +12,7 @@ describe('RenderComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

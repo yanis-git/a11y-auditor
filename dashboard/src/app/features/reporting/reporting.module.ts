@@ -1,29 +1,9 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FilterComponent } from './containers/filter/filter.component';
-import { RenderComponent } from './containers/render/render.component';
-import { CriteriaComponent } from './ui/criteria/criteria.component';
-import { ReportingComponent } from './reporting.component';
-import {HttpClientModule} from '@angular/common/http';
-import {RuleResultStore} from '../api/rule-result-store';
-import {isRuleErrorPipe, isRuleSucessPipe} from './pipes/ruleStatus.pipe';
-import { IntroComponent } from './ui/intro/intro.component';
-
-
+import { NgModule } from "@angular/core";
+import { HttpClientModule } from "@angular/common/http";
+import { RuleResultStore } from "../api/rule-result-store";
 
 @NgModule({
-    imports: [
-        CommonModule,
-        HttpClientModule,
-        FilterComponent,
-        RenderComponent,
-        CriteriaComponent,
-        ReportingComponent,
-        isRuleSucessPipe,
-        isRuleErrorPipe,
-        IntroComponent
-    ],
-    providers: [RuleResultStore],
-    exports: [ReportingComponent]
+  imports: [HttpClientModule],
+  providers: [RuleResultStore],
 })
-export class ReportingModule { }
+export class ReportingModule {}

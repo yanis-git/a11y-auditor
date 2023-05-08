@@ -1,16 +1,31 @@
 <div class="card m-3">
-    <div class="card-body">
-        <details>
-            <summary>
-                <h5 class="card-title d-flex align-items-center m-0">
-                    <span [ngClass]="{'bg-success': (rule | isRuleSucess), 'bg-danger': (rule | isRuleError)}"  class="me-2"  role="status"  [attr.aria-label]="rule.status | lowercase"></span>
-                    {{ rule.name }}
-                </h5>
-                <span class="arrow"><span></span></span>
-            </summary>
-            <p class="card-text">
-                {{ rule.description }}
-            </p>
-        </details>
-    </div>
+  <div class="card-body">
+    <details>
+      <summary>
+        <h5 class="card-title d-flex align-items-center m-0">
+          <span
+            [ngClass]="{
+              'bg-success': (rule | isRuleSucess),
+              'bg-danger': (rule | isRuleError)
+            }"
+            class="me-2"
+            role="status"
+            [attr.aria-label]="rule.status | lowercase"
+          ></span>
+          {{ rule.name }}
+        </h5>
+        <span class="arrow"><span></span></span>
+      </summary>
+      <div class="card-body">
+        <p class="card-text">
+          {{ rule.description }}
+        </p>
+        <p class="card-text" *ngIf="rule.hints.length > 0">
+          <button (click)="knowMore(rule)" class="btn btn-secondary">
+            Display Hint
+          </button>
+        </p>
+      </div>
+    </details>
+  </div>
 </div>

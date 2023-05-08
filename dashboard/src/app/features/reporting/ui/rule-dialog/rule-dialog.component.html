@@ -1,0 +1,9 @@
+<h1 mat-dialog-title>{{ rule.name }}</h1>
+<div mat-dialog-content>
+  <code *ngFor="let hint of rule.hints">
+    {{ hint }}
+  </code>
+</div>
+<div mat-dialog-actions>
+  <button (click)="close()" class="btn">Close</button>
+</div>

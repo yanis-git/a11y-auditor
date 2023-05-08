@@ -1,6 +1,4 @@
-import {Runner} from '../../index';
-import {isFrameHaveTitle} from './isFrameHaveTitle.checker';
+import { Runner } from "../../index";
+import { isFrameHaveTitle } from "./isFrameHaveTitle.checker";
 
-export const frameRunners: Runner[] = [
-    isFrameHaveTitle
-];
+export const frameRunners: Runner[] = [isFrameHaveTitle];

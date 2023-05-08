@@ -3,14 +3,12 @@
  *
  * @source https://www.w3.org/TR/wai-aria-1.1/#tpl
  */
-import {AriaCharacteristics, AriaRole, AriaRoleDefinition} from './type';
+import { AriaCharacteristics, AriaRole, AriaRoleDefinition } from "./type";
 
-export const tplRole: AriaRole = 'tpl';
-export const tplCharacteristics: AriaCharacteristics = [
-
-];
+export const tplRole: AriaRole = "tpl";
+export const tplCharacteristics: AriaCharacteristics = [];
 
 export const tplRoleDefinition: AriaRoleDefinition = {
-    allowedArias: tplCharacteristics,
-    selector: 'role[tpl]',
-}
+  allowedArias: tplCharacteristics,
+  selector: "role[tpl]",
+};

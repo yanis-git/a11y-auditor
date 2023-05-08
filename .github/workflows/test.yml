@@ -18,7 +18,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Lint, test and build
-        run: | 
+        run: |
           yarn 
           npx nx affected:lint
           npx nx affected:test

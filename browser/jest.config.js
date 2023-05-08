@@ -4,12 +4,12 @@
  */
 
 module.exports = {
-  preset: 'jest-puppeteer',
+  preset: "jest-puppeteer",
   clearMocks: true,
   collectCoverage: true,
   coverageProvider: "v8",
   // A map from regular expressions to paths to transformers
-    transform: {
-      '^.+\\.tsx?$': 'ts-jest',
-    },
+  transform: {
+    "^.+\\.tsx?$": "ts-jest",
+  },
 };

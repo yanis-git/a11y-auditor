@@ -1,60 +1,60 @@
-@import '../../../../../../../node_modules/bootstrap/scss/functions';
-@import '../../../../../../../node_modules/bootstrap/scss/variables';
-@import '../../../../../../../node_modules/bootstrap/scss/mixins';
+@import "../../../../../../../node_modules/bootstrap/scss/functions";
+@import "../../../../../../../node_modules/bootstrap/scss/variables";
+@import "../../../../../../../node_modules/bootstrap/scss/mixins";
 
-span[role=status] {
-    height: 10px;
-    width: 10px;
-    border-radius: 50%;
+span[role="status"] {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
 }
 
 //shadow-sm
 
 .card-body {
-    box-shadow: $box-shadow-sm;
-    border-radius: 10px;
-    background: #fff;
-    &[open] {
-        box-shadow: $box-shadow-lg;
+  box-shadow: $box-shadow-sm;
+  border-radius: 10px;
+  background: #fff;
+  &[open] {
+    box-shadow: $box-shadow-lg;
+  }
+  details {
+    summary {
+      list-style: none;
+      &::-webkit-details-marker,
+      &::marker {
+        display: none;
+      }
     }
-    details {
-        summary {
-            list-style: none;
-            &::-webkit-details-marker, &::marker {
-                display: none;
-            }
-        }
+    .arrow {
+      content: "";
+      background: #fff;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      position: absolute;
+      top: 0;
+      right: 28px;
+      transform: translateY(50%);
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      span {
+        width: 8px;
+        height: 8px;
+        border-bottom: 2px solid currentColor;
+        border-right: 2px solid currentColor;
+        display: block;
+        transform: rotate(45deg);
+        animation: transform ease-in-out 200ms;
+      }
+    }
+    &[open] {
       .arrow {
-        content: "";
-        background: #fff;
-        border: 1px solid rgba(0, 0, 0, 0.2);
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        position: absolute;
-        top: 0;
-        right: 28px;
-        transform: translateY(50%);
-        width: 28px;
-        height: 28px;
-        border-radius: 50%;
         span {
-          width: 8px;
-          height: 8px;
-          border-bottom: 2px solid currentColor;
-          border-right: 2px solid currentColor;
-          display: block;
-          transform: rotate(45deg);
-          animation: transform ease-in-out 200ms;
+          transform: rotate(225deg);
         }
       }
-      &[open] {
-            .arrow {
-                span {
-                    transform: rotate(225deg);
-                }
-            }
-        }
     }
-
+  }
 }

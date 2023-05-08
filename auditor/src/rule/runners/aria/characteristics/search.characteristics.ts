@@ -3,35 +3,35 @@
  *
  * @source https://www.w3.org/TR/wai-aria-1.1/#search
  */
-import {AriaCharacteristics, AriaRole, AriaRoleDefinition} from './type';
+import { AriaCharacteristics, AriaRole, AriaRoleDefinition } from "./type";
 
-export const searchRole: AriaRole = 'search';
+export const searchRole: AriaRole = "search";
 export const searchCharacteristics: AriaCharacteristics = [
-    "aria-atomic",
-    "aria-busy",
-    "aria-controls",
-    "aria-current",
-    "aria-describedby",
-    "aria-details",
-    "aria-disabled",
-    "aria-dropeffect",
-    "aria-errormessage",
-    "aria-expanded",
-    "aria-flowto",
-    "aria-grabbed",
-    "aria-haspopup",
-    "aria-hidden",
-    "aria-invalid",
-    "aria-keyshortcuts",
-    "aria-label",
-    "aria-labelledby",
-    "aria-live",
-    "aria-owns",
-    "aria-relevant",
-    "aria-roledescription"
+  "aria-atomic",
+  "aria-busy",
+  "aria-controls",
+  "aria-current",
+  "aria-describedby",
+  "aria-details",
+  "aria-disabled",
+  "aria-dropeffect",
+  "aria-errormessage",
+  "aria-expanded",
+  "aria-flowto",
+  "aria-grabbed",
+  "aria-haspopup",
+  "aria-hidden",
+  "aria-invalid",
+  "aria-keyshortcuts",
+  "aria-label",
+  "aria-labelledby",
+  "aria-live",
+  "aria-owns",
+  "aria-relevant",
+  "aria-roledescription",
 ];
 
 export const searchRoleDefinition: AriaRoleDefinition = {
-    allowedArias: searchCharacteristics,
-    selector: 'role[search]',
-}
+  allowedArias: searchCharacteristics,
+  selector: "role[search]",
+};

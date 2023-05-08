@@ -3,35 +3,35 @@
  *
  * @source https://www.w3.org/TR/wai-aria-1.1/#form
  */
-import {AriaCharacteristics, AriaRole, AriaRoleDefinition} from './type';
+import { AriaCharacteristics, AriaRole, AriaRoleDefinition } from "./type";
 
-export const formRole: AriaRole = 'form';
+export const formRole: AriaRole = "form";
 export const formCharacteristics: AriaCharacteristics = [
-    "aria-atomic",
-    "aria-busy",
-    "aria-controls",
-    "aria-current",
-    "aria-describedby",
-    "aria-details",
-    "aria-disabled",
-    "aria-dropeffect",
-    "aria-errormessage",
-    "aria-expanded",
-    "aria-flowto",
-    "aria-grabbed",
-    "aria-haspopup",
-    "aria-hidden",
-    "aria-invalid",
-    "aria-keyshortcuts",
-    "aria-label",
-    "aria-labelledby",
-    "aria-live",
-    "aria-owns",
-    "aria-relevant",
-    "aria-roledescription"
+  "aria-atomic",
+  "aria-busy",
+  "aria-controls",
+  "aria-current",
+  "aria-describedby",
+  "aria-details",
+  "aria-disabled",
+  "aria-dropeffect",
+  "aria-errormessage",
+  "aria-expanded",
+  "aria-flowto",
+  "aria-grabbed",
+  "aria-haspopup",
+  "aria-hidden",
+  "aria-invalid",
+  "aria-keyshortcuts",
+  "aria-label",
+  "aria-labelledby",
+  "aria-live",
+  "aria-owns",
+  "aria-relevant",
+  "aria-roledescription",
 ];
 
 export const formRoleDefinition: AriaRoleDefinition = {
-    allowedArias: formCharacteristics,
-    selector: 'form, role[form]',
-}
+  allowedArias: formCharacteristics,
+  selector: "form, role[form]",
+};

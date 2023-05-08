@@ -33,9 +33,7 @@
     "name": "Do we have multiple describer at once ?",
     "status": "error",
     "description": "there is multiple labelling, we should use only once per element to avoid different behavior of the browser.",
-    "hints": [
-      "aria-label=Vendor Search and placeholder=Search..."
-    ]
+    "hints": ["aria-label=Vendor Search and placeholder=Search..."]
   },
   {
     "name": "link elements have only supported aria attribute ?",
@@ -47,9 +45,7 @@
     "name": "button elements have only supported aria attribute ?",
     "status": "error",
     "description": "this elements should have only supported aria attribute.",
-    "hints": [
-      "button : aria-modal are founds and consider as invalid"
-    ]
+    "hints": ["button : aria-modal are founds and consider as invalid"]
   },
   {
     "name": "alert elements have only supported aria attribute ?",
@@ -205,9 +201,7 @@
     "name": "input elements have only supported aria attribute ?",
     "status": "error",
     "description": "this elements should have only supported aria attribute.",
-    "hints": [
-      "input : aria-checked are founds and consider as invalid"
-    ]
+    "hints": ["input : aria-checked are founds and consider as invalid"]
   },
   {
     "name": "landmark elements have only supported aria attribute ?",
@@ -231,9 +225,7 @@
     "name": "listitem elements have only supported aria attribute ?",
     "status": "error",
     "description": "this elements should have only supported aria attribute.",
-    "hints": [
-      "listitem : aria-selected are founds and consider as invalid"
-    ]
+    "hints": ["listitem : aria-selected are founds and consider as invalid"]
   },
   {
     "name": "log elements have only supported aria attribute ?",
