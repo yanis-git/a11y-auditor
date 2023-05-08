@@ -3,7 +3,7 @@
         <details>
             <summary>
                 <h5 class="card-title d-flex align-items-center m-0">
-                    <span [ngClass]="{'bg-success': (rule | isRuleSucess), 'bg-error': (rule | isRuleError)}"  class="me-2"  role="status"  [attr.aria-label]="rule.status | lowercase"></span>
+                    <span [ngClass]="{'bg-success': (rule | isRuleSucess), 'bg-danger': (rule | isRuleError)}"  class="me-2"  role="status"  [attr.aria-label]="rule.status | lowercase"></span>
                     {{ rule.name }}
                 </h5>
                 <span class="arrow"><span></span></span>

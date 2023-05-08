@@ -12,7 +12,7 @@ import { IntroComponent } from './ui/intro/intro.component';
     template: `
     <main>
       <a11y-intro><a11y-filter></a11y-filter></a11y-intro>
-      <a11y-render [rules]="(sucess$ | async) ?? []"></a11y-render>
+      <a11y-render [rules]="(errors$ | async) ?? []"></a11y-render>
     </main>
   `,
     changeDetection: ChangeDetectionStrategy.OnPush,
