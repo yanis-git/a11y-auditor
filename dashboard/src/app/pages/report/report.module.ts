@@ -10,12 +10,12 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [ReportPageComponent],
-  imports: [
-    CommonModule,
-    RouterModule.forChild(routes),
-    ReportingModule,
-    FooterModule
-  ]
+    imports: [
+        CommonModule,
+        RouterModule.forChild(routes),
+        ReportingModule,
+        FooterModule,
+        ReportPageComponent
+    ]
 })
 export class ReportModule { }

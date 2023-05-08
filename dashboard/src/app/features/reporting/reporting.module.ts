@@ -12,20 +12,18 @@ import { IntroComponent } from './ui/intro/intro.component';
 
 
 @NgModule({
-  declarations: [
-    FilterComponent,
-    RenderComponent,
-    CriteriaComponent,
-    ReportingComponent,
-    isRuleSucessPipe,
-    isRuleErrorPipe,
-    IntroComponent
-  ],
-  imports: [
-    CommonModule,
-    HttpClientModule
-  ],
-  providers: [RuleResultStore],
-  exports: [ReportingComponent]
+    imports: [
+        CommonModule,
+        HttpClientModule,
+        FilterComponent,
+        RenderComponent,
+        CriteriaComponent,
+        ReportingComponent,
+        isRuleSucessPipe,
+        isRuleErrorPipe,
+        IntroComponent
+    ],
+    providers: [RuleResultStore],
+    exports: [ReportingComponent]
 })
 export class ReportingModule { }
