@@ -6,12 +6,6 @@ describe("IntroComponent", () => {
   let component: IntroComponent;
   let fixture: ComponentFixture<IntroComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [IntroComponent],
-    }).compileComponents();
-  });
-
   beforeEach(() => {
     fixture = TestBed.createComponent(IntroComponent);
     component = fixture.componentInstance;
