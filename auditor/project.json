@@ -6,7 +6,9 @@
   "targets": {
     "watch": {
       "executor": "@nrwl/webpack:webpack",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/auditor",
         "main": "auditor/src/index.ts",
@@ -26,7 +28,9 @@
     },
     "build": {
       "executor": "@nrwl/webpack:webpack",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/auditor",
         "main": "auditor/src/index.ts",
@@ -51,14 +55,20 @@
     },
     "lint": {
       "executor": "@nx/linter:eslint",
-      "outputs": ["{options.outputFile}"],
+      "outputs": [
+        "{options.outputFile}"
+      ],
       "options": {
-        "lintFilePatterns": ["auditor/**/*.ts"]
+        "lintFilePatterns": [
+          "auditor/**/*.ts"
+        ]
       }
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/auditor"],
+      "outputs": [
+        "{workspaceRoot}/coverage/auditor"
+      ],
       "options": {
         "jestConfig": "auditor/jest.config.ts",
         "passWithNoTests": true
