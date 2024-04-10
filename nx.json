@@ -7,38 +7,50 @@
       "inputs": [
         "production",
         "^production"
-      ]
+      ],
+      "cache": true
     },
     "test": {
       "inputs": [
         "default",
         "^production",
         "{workspaceRoot}/jest.preset.js"
-      ]
+      ],
+      "cache": true
     },
     "lint": {
       "inputs": [
         "default",
         "{workspaceRoot}/.eslintrc.json"
-      ]
+      ],
+      "cache": true
+    },
+    "@nx/jest:jest": {
+      "inputs": [
+        "default",
+        "^production",
+        "{workspaceRoot}/jest.preset.js"
+      ],
+      "cache": true,
+      "options": {
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    },
+    "@nx/eslint:lint": {
+      "inputs": [
+        "default",
+        "{workspaceRoot}/.eslintrc.json"
+      ],
+      "cache": true
     }
   },
   "extends": "@nx/workspace/presets/npm.json",
-  "npmScope": "a11y-auditor",
-  "tasksRunnerOptions": {
-    "default": {
-      "runner": "nx/tasks-runners/default",
-      "options": {
-        "cacheableOperations": [
-          "build",
-          "test",
-          "lint",
-          "package",
-          "prepare"
-        ]
-      }
-    }
-  },
   "targetDependencies": {
     "build": [
       {
@@ -58,9 +70,6 @@
         "projects": "dependencies"
       }
     ]
-  },
-  "affected": {
-    "defaultBase": "main"
   },
   "pluginsConfig": {
     "@nrwl/js": {
@@ -83,9 +92,6 @@
       "changeDetection": "OnPush"
     }
   },
-  "cli": {
-    "defaultCollection": "@nx/angular"
-  },
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "namedInputs": {
     "default": [
@@ -101,5 +107,7 @@
       "!{projectRoot}/.eslintrc.json",
       "!{projectRoot}/src/test-setup.[jt]s"
     ]
-  }
+  },
+  "useInferencePlugins": false,
+  "defaultBase": "main"
 }

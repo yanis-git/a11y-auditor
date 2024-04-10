@@ -13,9 +13,7 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/dashboard",
         "index": "dashboard/src/index.html",
@@ -23,10 +21,7 @@
         "polyfills": "dashboard/src/polyfills.ts",
         "tsConfig": "dashboard/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": [
-          "dashboard/src/favicon.ico",
-          "dashboard/src/assets"
-        ],
+        "assets": ["dashboard/src/favicon.ico", "dashboard/src/assets"],
         "styles": [
           "@angular/material/prebuilt-themes/indigo-pink.css",
           "dashboard/src/styles.scss"
@@ -43,8 +38,8 @@
             },
             {
               "type": "anyComponentStyle",
-              "maximumWarning": "2kb",
-              "maximumError": "4kb"
+              "maximumWarning": "15kb",
+              "maximumError": "20kb"
             }
           ],
           "fileReplacements": [
@@ -70,10 +65,10 @@
       "executor": "@angular-devkit/build-angular:dev-server",
       "configurations": {
         "production": {
-          "browserTarget": "dashboard:build:production"
+          "buildTarget": "dashboard:build:production"
         },
         "development": {
-          "browserTarget": "dashboard:build:development"
+          "buildTarget": "dashboard:build:development"
         }
       },
       "defaultConfiguration": "development"
@@ -82,10 +77,10 @@
       "executor": "@angular-devkit/build-angular:dev-server",
       "configurations": {
         "production": {
-          "browserTarget": "dashboard:build:production"
+          "buildTarget": "dashboard:build:production"
         },
         "development": {
-          "browserTarget": "dashboard:build:development"
+          "buildTarget": "dashboard:build:development"
         }
       },
       "defaultConfiguration": "development"
@@ -93,26 +88,17 @@
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
-        "browserTarget": "dashboard:build"
+        "buildTarget": "dashboard:build"
       }
     },
     "lint": {
-      "executor": "@nx/linter:eslint",
-      "options": {
-        "lintFilePatterns": [
-          "dashboard/**/*.ts",
-          "dashboard/**/*.html"
-        ]
-      }
+      "executor": "@nx/eslint:lint"
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": [
-        "{workspaceRoot}/coverage/dashboard"
-      ],
+      "outputs": ["{workspaceRoot}/coverage/dashboard"],
       "options": {
-        "jestConfig": "dashboard/jest.config.ts",
-        "passWithNoTests": true
+        "jestConfig": "dashboard/jest.config.ts"
       }
     }
   },

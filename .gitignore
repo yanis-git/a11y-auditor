@@ -285,3 +285,5 @@ dist
 results/*.json
 
 .angular
+
+.nx/cache

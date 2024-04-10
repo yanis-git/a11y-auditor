@@ -24,10 +24,12 @@ export class Browser {
 
   private async bootstrapBrowser() {
     this.browser = await puppeteer.use(StealthPlugin()).launch({
-      headless: !this.isDebug,
+      // headless: !this.isDebug,
       args: ["--window-size=1920,1080"],
+      ignoreHTTPSErrors: true,
       executablePath: executablePath(),
     });
+
     this.page = await this.browser.newPage();
   }
 
