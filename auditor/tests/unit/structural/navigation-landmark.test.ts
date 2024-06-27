@@ -18,13 +18,13 @@ describe("Navigation Landmark", function () {
         expect(result.isSuccess()).toBe(true);
         expect(result.getSelectors()).toEqual([]);
       })();
-    }
+    },
   );
 
   it("should return error when no navigation landmark is on the DOM", () => {
     return (async () => {
       const page: Page = await getPageWithContent(
-        "tests/data/structural/navigation/test-no-nav-element-is-present.html"
+        "tests/data/structural/navigation/test-no-nav-element-is-present.html",
       );
       const result: RuleResult = await isNavIsPresent(page);
       expect(result.isError()).toBe(true);

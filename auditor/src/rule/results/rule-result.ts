@@ -6,7 +6,7 @@ export class RuleResult {
     private description: string,
     private selectors: string[],
     private sources: string[],
-    private status: RuleStatus
+    private status: RuleStatus,
   ) {}
 
   static createRecommandation(
@@ -14,21 +14,21 @@ export class RuleResult {
     description: string,
     selectors: string[] = [],
     sources: string[] = [],
-    status: RuleStatus
+    status: RuleStatus,
   ): RuleResult {
     return new RuleResult(name, description, selectors, sources, status);
   }
 
   static createSuccessRecommandation(
     name: string,
-    description: string
+    description: string,
   ): RuleResult {
     return RuleResult.createRecommandation(
       name,
       description,
       [],
       [],
-      RuleStatus.SUCCESS
+      RuleStatus.SUCCESS,
     );
   }
 
@@ -36,14 +36,14 @@ export class RuleResult {
     name: string,
     description: string,
     selectors: string[] = [],
-    sources: string[] = []
+    sources: string[] = [],
   ): RuleResult {
     return RuleResult.createRecommandation(
       name,
       description,
       selectors,
       sources,
-      RuleStatus.ERROR
+      RuleStatus.ERROR,
     );
   }
 

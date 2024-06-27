@@ -7,14 +7,14 @@ describe("Image alt and aria label", () => {
   it("should return error when image have alt and aria-label", () => {
     return (async () => {
       const page: Page = await getPageWithContent(
-        "tests/data/image/test-image-with-alt-and-aria-label.html"
+        "tests/data/image/test-image-with-alt-and-aria-label.html",
       );
       const result: RuleResult = await isAltNotOverridden(page);
       expect(result.isError()).toBe(true);
       expect(result.isSuccess()).toBe(false);
       expect(result.getSelectors()).toContain("body > main > img");
       expect(result.getSelectors()).toContain(
-        "body > main > img:nth-of-type(2)"
+        "body > main > img:nth-of-type(2)",
       );
     })();
   });
@@ -33,6 +33,6 @@ describe("Image alt and aria label", () => {
         expect(result.isError()).toBe(false);
         expect(result.getSelectors()).toEqual([]);
       })();
-    }
+    },
   );
 });

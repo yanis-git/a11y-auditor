@@ -1,7 +1,7 @@
 export function checkAttribute(
   element: HTMLElement,
   attribute: string,
-  expectedValue: string = "true"
+  expectedValue = "true",
 ): boolean {
   return (
     element.hasAttribute(attribute) &&
@@ -12,7 +12,7 @@ export function checkAttribute(
 export function checkCssProperty(
   element: HTMLElement,
   property: string,
-  expectedValue: string
+  expectedValue: string,
 ): boolean {
   // @ts-ignore
   return element.style[property] === expectedValue;

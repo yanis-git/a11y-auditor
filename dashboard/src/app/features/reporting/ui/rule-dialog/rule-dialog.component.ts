@@ -18,7 +18,7 @@ import { NgForOf } from "@angular/common";
 export class RuleDialogComponent {
   constructor(
     public dialogRef: MatDialogRef<RuleDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public rule: RuleSet
+    @Inject(MAT_DIALOG_DATA) public rule: RuleSet,
   ) {}
 
   close(): void {

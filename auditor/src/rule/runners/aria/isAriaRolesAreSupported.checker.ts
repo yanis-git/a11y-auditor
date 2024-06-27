@@ -17,14 +17,14 @@ import { helper } from "../../../../../dist/browser";
 declare let a11yAuditor: { helper: typeof helper };
 export async function isAriaRolesAreSupported(
   ariaRoles: AriaRoles,
-  page: Page
+  page: Page,
 ): Promise<RuleResult[]> {
   // parsing section
   const results: ResultType[] = await page.evaluate((aria: AriaRoles) => {
     const results = [];
     for (const [role, information] of Object.entries(aria)) {
       const elements = document.querySelectorAll<HTMLElement>(
-        information.selector
+        information.selector,
       );
       const exceptions: { attributes: string[]; selector: string }[] = [];
       // For each matching elements we are looking for unexpected aria attributes.
@@ -36,7 +36,7 @@ export async function isAriaRolesAreSupported(
           .filter(
             (attribute) =>
               /^aria-/.test(attribute) &&
-              !information.allowedArias.includes(attribute)
+              !information.allowedArias.includes(attribute),
           );
         if (invalidArias.length > 0) {
           exceptions.push({
@@ -63,7 +63,7 @@ export async function isAriaRolesAreSupported(
       name,
       description,
       [result.selector],
-      sources
+      sources,
     );
   });
 }

@@ -15,7 +15,7 @@ export async function isMainTagIsPresent(page: Page): Promise<RuleResult> {
   // parsing section
   const results = await page.evaluate(() => {
     return Array.from(
-      document.querySelectorAll<HTMLElement>("main, [role=main]")
+      document.querySelectorAll<HTMLElement>("main, [role=main]"),
     )
       .filter((el) => a11yAuditor.helper.isVisibleForScreenReader(el))
       .map((el) => a11yAuditor.helper.getCssPath(el));
@@ -26,7 +26,7 @@ export async function isMainTagIsPresent(page: Page): Promise<RuleResult> {
       ruleName,
       ruleDescription,
       ["Main landmark is missing"],
-      sources
+      sources,
     );
   }
   if (results.length > 1) {
@@ -37,7 +37,7 @@ export async function isMainTagIsPresent(page: Page): Promise<RuleResult> {
         "Main landmark is present more than once. Use hidden attributes or remove tags",
         ...results,
       ],
-      sources
+      sources,
     );
   }
   return RuleResult.createSuccessRecommandation(ruleName, ruleDescription);

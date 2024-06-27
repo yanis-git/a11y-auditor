@@ -32,7 +32,7 @@ export class App {
     this.config = { ...defaultConfig, ...config };
     this.browser = new Browser(
       this.config.isDebug,
-      this.config.path.browserDir
+      this.config.path.browserDir,
     );
   }
 
@@ -65,8 +65,8 @@ export class App {
       JSON.stringify(
         results.map((result) => result.toJson()),
         null,
-        2
-      )
+        2,
+      ),
     );
   }
 }

@@ -33,7 +33,7 @@ export function getDomElementPath(element: HTMLElement): string[] {
       stack.unshift(
         element.hasAttribute("role")
           ? `${nodeName}[role="${element.getAttribute("role")}"]`
-          : nodeName
+          : nodeName,
       );
     }
     element = element.parentNode as HTMLElement;

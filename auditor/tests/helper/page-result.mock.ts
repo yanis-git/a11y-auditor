@@ -20,8 +20,8 @@ export async function getPageWithContent(contentPath: string): Promise<Page> {
   await page.evaluate(
     fs.readFileSync(
       path.resolve(__dirname, "../../../", "dist/browser/index.js"),
-      "utf8"
-    )
+      "utf8",
+    ),
   );
 
   // todo remove me when @types/puppeter will be up to date.

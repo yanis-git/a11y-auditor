@@ -8,7 +8,7 @@ describe("describer", function () {
   it("should return success when all describer are well mapped.", () => {
     return (async () => {
       const page: Page = await getPageWithContent(
-        "tests/data/describer/test-describer-is-valid.html"
+        "tests/data/describer/test-describer-is-valid.html",
       );
       const result: RuleResult = await isDescribedByIsReferToValidElement(page);
       expect(result.isSuccess()).toBe(true);
@@ -18,7 +18,7 @@ describe("describer", function () {
   it("should return error when at least, one iframe present do not have title", () => {
     return (async () => {
       const page: Page = await getPageWithContent(
-        "tests/data/describer/test-describer-is-invalid.html"
+        "tests/data/describer/test-describer-is-invalid.html",
       );
       const result: RuleResult = await isDescribedByIsReferToValidElement(page);
       expect(result.getSelectors().length).toBe(5);
@@ -34,7 +34,7 @@ describe("describer", function () {
     ];
     return (async () => {
       const page: Page = await getPageWithContent(
-        "tests/data/describer/test-multiple-describer-invalid.html"
+        "tests/data/describer/test-multiple-describer-invalid.html",
       );
       const results: RuleResult[] = await isLabelAreInConflict(page);
       expect(results.length).toBe(expectedResults.length);
@@ -47,7 +47,7 @@ describe("describer", function () {
   it("should return success when there is single label or multiple with same value", () => {
     return (async () => {
       const page: Page = await getPageWithContent(
-        "tests/data/describer/test-multiple-describer-valid.html"
+        "tests/data/describer/test-multiple-describer-valid.html",
       );
       const results: RuleResult[] = await isLabelAreInConflict(page);
       expect(results.length).toBe(1);

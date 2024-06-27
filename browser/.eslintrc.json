@@ -1,29 +1,14 @@
 {
   "extends": ["../.eslintrc.json"],
   "ignorePatterns": ["!**/*"],
-  "env": {
-    "browser": true,
-    "node": true
-  },
-  "globals": {
-    "page:": true,
-    "browser": true
-  },
   "overrides": [
-    {
-      "files": ["*.json"],
-      "rules": {}
-    },
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
       "rules": {}
     },
     {
       "files": ["*.ts", "*.tsx"],
-      "rules": {
-        "@nx/enforce-module-boundaries": "warn",
-        "no-unused-vars": "warn"
-      }
+      "rules": {}
     },
     {
       "files": ["*.js", "*.jsx"],

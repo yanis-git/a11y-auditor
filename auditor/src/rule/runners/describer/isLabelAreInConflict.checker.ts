@@ -37,7 +37,7 @@ export async function isLabelAreInConflict(page: Page): Promise<RuleResult[]> {
           return;
         }
         Array.from(
-          document.querySelectorAll(`[${selector1}],[${selector2}]`)
+          document.querySelectorAll(`[${selector1}],[${selector2}]`),
         ).forEach((element) => {
           const label1 = element.getAttribute(selector1);
           const label2 = element.getAttribute(selector2);
@@ -63,8 +63,8 @@ export async function isLabelAreInConflict(page: Page): Promise<RuleResult[]> {
         ruleName,
         `conflict between ${result.issue}`,
         [result.selector],
-        sources
-      )
+        sources,
+      ),
     );
   }
 }

@@ -14,10 +14,10 @@ export async function isAltNotOverridden(page: Page): Promise<RuleResult> {
   // parsing section
   const results = await page.evaluate(() => {
     const images = document.querySelectorAll<HTMLImageElement>(
-      "img[alt][aria-label], img[alt][aria-labelledby]"
+      "img[alt][aria-label], img[alt][aria-labelledby]",
     );
     return Array.from(images).map((image) =>
-      a11yAuditor.helper.getCssPath(image)
+      a11yAuditor.helper.getCssPath(image),
     );
   });
 
@@ -29,7 +29,7 @@ export async function isAltNotOverridden(page: Page): Promise<RuleResult> {
       ruleName,
       ruleDescription,
       results,
-      sources
+      sources,
     );
   }
 }

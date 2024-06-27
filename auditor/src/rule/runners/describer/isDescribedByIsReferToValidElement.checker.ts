@@ -12,12 +12,12 @@ const sources = [
 import { helper } from "../../../../../dist/browser";
 declare let a11yAuditor: { helper: typeof helper };
 export async function isDescribedByIsReferToValidElement(
-  page: Page
+  page: Page,
 ): Promise<RuleResult> {
   // parsing section
   const results = await page.evaluate(() => {
     const elements = document.querySelectorAll<HTMLElement>(
-      "[aria-describedby], [aria-labelledby]"
+      "[aria-describedby], [aria-labelledby]",
     );
     return Array.from(elements)
       .filter((element: HTMLElement) => {
@@ -44,7 +44,7 @@ export async function isDescribedByIsReferToValidElement(
       ruleName,
       ruleDescription,
       results,
-      sources
+      sources,
     );
   }
 }

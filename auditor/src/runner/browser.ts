@@ -7,7 +7,10 @@ export class Browser {
   private browser!: PuppeteerBrowser;
   private page!: Page;
   private isDebug: boolean;
-  constructor(isDebug: boolean, private browserDir: string) {
+  constructor(
+    isDebug: boolean,
+    private browserDir: string,
+  ) {
     this.isDebug = isDebug;
   }
 

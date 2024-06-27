@@ -22,5 +22,5 @@ export const args = parse<AuditorCliArguments>(
     headerContentSections: [
       { header: "A11Y Auditor Tools", content: "CLI A11Y Auditor" },
     ],
-  }
+  },
 );

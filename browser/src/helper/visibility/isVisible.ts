@@ -30,7 +30,7 @@ export function isVisibleForScreenReader(element?: HTMLElement): boolean {
       checkCssProperty(
         element,
         hiddenCssProperty.property,
-        hiddenCssProperty.expectedValue
+        hiddenCssProperty.expectedValue,
       )
     ) {
       isVisible = false;

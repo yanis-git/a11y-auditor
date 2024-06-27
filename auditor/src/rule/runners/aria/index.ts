@@ -6,6 +6,6 @@ import { Page } from "puppeteer";
 export const ariaRunners: Runner[] = [
   ...Object.keys(Aria).map(
     (role) => (page: Page) =>
-      isAriaRolesAreSupported({ [role]: Aria[role] }, page)
+      isAriaRolesAreSupported({ [role]: Aria[role] }, page),
   ),
 ];

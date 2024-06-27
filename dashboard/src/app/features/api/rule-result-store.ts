@@ -24,13 +24,13 @@ export class RuleResultStore extends ComponentStore<Store> {
 
   get errors$(): Observable<RuleSet[]> {
     return this.select((state) =>
-      this.filterByStatus(state.ruleSets, RuleStatus.ERROR)
+      this.filterByStatus(state.ruleSets, RuleStatus.ERROR),
     );
   }
 
   get sucess$(): Observable<RuleSet[]> {
     return this.select((state) =>
-      this.filterByStatus(state.ruleSets, RuleStatus.SUCCESS)
+      this.filterByStatus(state.ruleSets, RuleStatus.SUCCESS),
     );
   }
 

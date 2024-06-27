@@ -7,7 +7,7 @@ describe("is alt is present", () => {
   it("should return error when image does not have alt attribute", () => {
     return (async () => {
       const page: Page = await getPageWithContent(
-        "tests/data/image/test-image-without-alt.html"
+        "tests/data/image/test-image-without-alt.html",
       );
       const result: RuleResult = await isImagesHaveAltChecker(page);
       expect(result.isError()).toBe(true);
@@ -30,6 +30,6 @@ describe("is alt is present", () => {
         expect(result.isError()).toBe(false);
         expect(result.getSelectors()).toEqual([]);
       })();
-    }
+    },
   );
 });

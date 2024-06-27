@@ -13,7 +13,7 @@ export async function isNavIsPresent(page: Page): Promise<RuleResult> {
   // parsing section
   const results = await page.evaluate(() => {
     return Array.from(
-      document.querySelectorAll<HTMLElement>("nav, [role=navigation]")
+      document.querySelectorAll<HTMLElement>("nav, [role=navigation]"),
     )
       .filter((el) => a11yAuditor.helper.isVisibleForScreenReader(el))
       .map((el) => a11yAuditor.helper.getCssPath(el));
@@ -24,7 +24,7 @@ export async function isNavIsPresent(page: Page): Promise<RuleResult> {
       ruleName,
       ruleDescription,
       ["Primary navigation landmark is missing"],
-      sources
+      sources,
     );
   }
 

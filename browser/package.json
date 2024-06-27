@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Chromeless bot to check accessibility criteria",
   "scripts": {
-    "lint": "tslint 'src/**/*.ts'",
     "build": "npx webpack --config config/webpack.config.js",
     "watch": "npx webpack --config config/webpack.config.js --watch",
     "test": "true"

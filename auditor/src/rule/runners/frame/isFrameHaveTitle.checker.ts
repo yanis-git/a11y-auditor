@@ -12,10 +12,10 @@ export async function isFrameHaveTitle(page: Page): Promise<RuleResult> {
   // parsing section
   const results = await page.evaluate(() => {
     const frames = document.querySelectorAll<HTMLIFrameElement>(
-      "frame:not([title]), iframe:not([title])"
+      "frame:not([title]), iframe:not([title])",
     );
     return Array.from(frames).map((frame) =>
-      a11yAuditor.helper.getCssPath(frame)
+      a11yAuditor.helper.getCssPath(frame),
     );
   });
 
@@ -27,7 +27,7 @@ export async function isFrameHaveTitle(page: Page): Promise<RuleResult> {
       ruleName,
       ruleDescription,
       results,
-      sources
+      sources,
     );
   }
 }
