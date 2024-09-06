@@ -22,7 +22,7 @@
     "build:auditor": "nx build auditor",
     "test:serve": "python3 -m http.server --directory auditor/tests/data",
     "result:serve": "python3 -m http.server --directory results",
-    "auditor": "node dist/auditor/main.js",
+    "auditor": "node dist/auditor/src/index.js",
     "dashboard:serve": "nx serve dashboard",
     "dashboard:build": "nx build dashboard",
     "migrate": "nx migrate latest && nx migrate --run-migrations --if-exists"

@@ -1,6 +1,6 @@
 import { Browser } from "./runner/browser";
 import { Page } from "puppeteer";
-import { runners } from "./rule";
+import { getRunnersCandidate } from "./rule";
 import { RuleResult } from "./rule/results/rule-result";
 import path from "path";
 import * as fs from "fs";
@@ -8,6 +8,7 @@ import * as fs from "fs";
 export interface AppConfig {
   url: string;
   isDebug: boolean;
+  onlyAxe: boolean;
   path: {
     projectDir: string;
     browserDir: string;
@@ -18,10 +19,11 @@ export interface AppConfig {
 const defaultConfig = {
   isDebug: false,
   url: "https://github.com/yanis-git",
+  onlyAxe: false,
   path: {
-    projectDir: path.join(__dirname, ".."),
-    browserDir: path.join(__dirname, "../browser"),
-    auditorDir: path.join(__dirname, "../auditor"),
+    projectDir: path.join(__dirname, "..", ".."),
+    browserDir: path.join(__dirname, "..", "../browser"),
+    auditorDir: path.join(__dirname, "..", "../auditor"),
   },
 };
 
@@ -47,7 +49,7 @@ export class App {
 
   private async runRules(page: Page): Promise<RuleResult[]> {
     const results: RuleResult[] = [];
-    for (const rule of runners) {
+    for (const rule of getRunnersCandidate({ onlyAxe: this.config.onlyAxe })) {
       try {
         const runResult = await rule(page);
         results.push(...(Array.isArray(runResult) ? runResult : [runResult]));
@@ -60,13 +62,21 @@ export class App {
 
   private writeResults(results: RuleResult[]) {
     console.table(results.map((result) => result.toJson()));
-    fs.writeFileSync(
-      path.join(this.config.path.projectDir, "../results/results.json"),
-      JSON.stringify(
-        results.map((result) => result.toJson()),
-        null,
-        2,
-      ),
-    );
+
+    const splitter: { [key: string]: RuleResult[] } = {
+      success: results.filter((result) => result.isSuccess()),
+      errors: results.filter((result) => result.isError()),
+    };
+
+    Object.keys(splitter).forEach((key) => {
+      fs.writeFileSync(
+        path.join(this.config.path.projectDir, `../results/${key}.json`),
+        JSON.stringify(
+          splitter[key].map((result) => result.toJson()),
+          null,
+          2,
+        ),
+      );
+    });
   }
 }

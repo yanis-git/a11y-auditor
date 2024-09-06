@@ -9,11 +9,22 @@ import { axeRunners } from "./runners/axe";
 
 export type Runner = (page: Page) => Promise<RuleResult | RuleResult[]>;
 
-export const runners: Runner[] = [
-  ...imageRunners,
-  ...structuralRunners,
-  ...frameRunners,
-  ...describerRunners,
-  ...ariaRunners,
-  ...axeRunners,
-];
+export interface RunnerConfg {
+  onlyAxe: boolean;
+}
+
+export const getRunnersCandidate: (config: RunnerConfg) => Runner[] = (
+  config,
+) => {
+  if (config.onlyAxe) {
+    return axeRunners;
+  }
+  return [
+    ...imageRunners,
+    ...structuralRunners,
+    ...frameRunners,
+    ...describerRunners,
+    ...ariaRunners,
+    ...axeRunners,
+  ];
+};

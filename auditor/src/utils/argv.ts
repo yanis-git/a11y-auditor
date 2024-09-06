@@ -3,6 +3,7 @@ import { parse } from "ts-command-line-args";
 interface AuditorCliArguments {
   url: string;
   debug: boolean;
+  onlyAxe: boolean;
   help?: boolean;
 }
 
@@ -10,6 +11,7 @@ export const args = parse<AuditorCliArguments>(
   {
     url: { type: String, alias: "u" },
     debug: { type: Boolean, alias: "d" },
+    onlyAxe: { type: Boolean, alias: "a", defaultValue: false },
     help: {
       type: Boolean,
       optional: true,
